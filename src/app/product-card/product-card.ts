@@ -1,0 +1,25 @@
+import { Component, Input } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { Product } from '../product';
+import { CommonModule } from '@angular/common';
+@Component({
+  selector: 'app-product-card',
+  imports: [MatIconModule,CommonModule],
+  templateUrl: './product-card.html',
+  styleUrls: ['./product-card.css'],
+})
+export class ProductCard {
+  @Input() products : Product[] = [];
+  currentIndex: number = 0;
+
+   getSelectedUrl(): string {
+    return this.products[this.currentIndex].url;
+  }
+
+  addToCart(): void {
+    console.log('Product added to cart!');
+    // Here you can push to a cart array, emit an event, or call a service
+  }
+
+  
+}

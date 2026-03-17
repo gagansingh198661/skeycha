@@ -1,0 +1,41 @@
+.catalog-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  justify-content: space-between;
+  background-color: #fff;   /* so it doesn’t overlap with products */
+  padding: 5px;
+  position: sticky;         /* key property */
+  top: 0;                   /* sticks at top of viewport */
+  z-index: 10;              /* stays above product grid */
+  border-bottom: 1px solid #ccc;
+  color: #202020 ;
+}
+
+.left{
+    border-right: 1px solid #ccc;
+    text-align: center
+}
+
+.catalog-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 products per row */
+  gap: 16px;
+  padding: 5px;
+}
+
+.product{
+    color: #404040 ;
+}
+
+.sort {
+  display: flex;            /* align text + icon horizontally */
+  gap: 4px;                 /* space between text and icon */
+  color: #404040;           /* darker grey */
+  justify-content: center;
+}
+
+.sort-by-icon{
+    font-size: 20px;       /* slightly larger icon */
+    color: #404040; 
+}

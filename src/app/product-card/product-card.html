@@ -1,0 +1,23 @@
+<div class="product">
+    <div class="product-image-container" >
+        <img [src]="getSelectedUrl()" alt="Product Image" class="product-image" />
+    </div>
+    <div class="add-to-cart-container">
+        <div class="add-to-cart-button" (click)="addToCart()"  aria-label="Add to Cart">
+            <span class="add-to-cart-text" style="color: beige;">Add to Cart</span>
+        </div>
+    </div>
+    
+    <div class="product-name">
+        <span>Product Name</span>
+    </div>
+    <div class="product-price">
+        <span>$19.99</span>
+    </div>
+    <div class="product-colors">
+        <span class="color-option" style="background-color: red;">R </span>
+        <span class="color-option" style="background-color: blue;">B </span>
+        <span class="color-option" style="background-color: green;">G</span>
+
+    </div>
+</div>

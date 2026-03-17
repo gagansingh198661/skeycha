@@ -1,0 +1,23 @@
+.menu{
+    display: block;
+
+}
+.menu-content{
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 10%;
+    grid-template-columns: auto auto auto;
+
+}
+right-menu{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.menu-item-image{
+    display: contents;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
