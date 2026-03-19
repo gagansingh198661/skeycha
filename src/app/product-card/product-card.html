@@ -11,13 +11,20 @@
     <div class="product-name">
         <span>Product Name</span>
     </div>
-    <div class="product-price">
-        <span>$19.99</span>
+    <div class="prices">
+        <div class="product-price">
+            <span>₹ 570.00</span>
+        </div>
+        <div class="previous-price">
+            <span>$19.99</span>
+        </div>
     </div>
+    
     <div class="product-colors">
-        <span class="color-option" style="background-color: red;">R </span>
-        <span class="color-option" style="background-color: blue;">B </span>
-        <span class="color-option" style="background-color: green;">G</span>
+        <div class="dot" (click)="selectDot(0)"></div>
+        <div class="dot" style="background-color: cadetblue;" (click)="selectDot(1)"></div>
+        <div class="dot" style="background-color: lightgray;" (click)="selectDot(2)"></div>
+
 
     </div>
 </div>

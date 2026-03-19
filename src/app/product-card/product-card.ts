@@ -11,6 +11,11 @@ import { CommonModule } from '@angular/common';
 export class ProductCard {
   @Input() products : Product[] = [];
   currentIndex: number = 0;
+  selectedDotIndex: number | null = null;
+
+selectDot(index: number): void {
+  this.selectedDotIndex = index;
+}
 
    getSelectedUrl(): string {
     return this.products[this.currentIndex].url;
