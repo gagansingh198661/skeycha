@@ -11,6 +11,7 @@
 .product-image {
   width: 100%;
   object-fit: cover;
+  /* transition: background-image 500ms; */
 }
 
 .add-to-cart-button{
@@ -22,7 +23,7 @@
 }
 
 .prices{
-    display: flex;
+  display: flex;
   flex-direction: row;   /* side by side */
   justify-content: center;
   align-items: center;   /* align vertically */
@@ -45,26 +46,34 @@
 }
 
 .previous-price{
-    text-decoration: line-through;
-    display: inline-block;   /* shrink to fit content */
+  text-decoration: line-through;
+  display: inline-block;   /* shrink to fit content */
   text-align: left;        /* prevent full-width centering */
   font: 12px Poppins, sans-serif;
   margin-top: 5px;
 }
 
 .dot {
-    display: inline-block;
+  display: inline-block;
   width: 12px;
   height: 12px;
-  background-color: black;
   border-radius: 50%;
   cursor: pointer;
+    
 }
 
 .dot.selected {
-  border: 2px solid #333;   /* outer circle */
+  border: 2px solid #fff;   /* outer circle */
   padding: 2px;             /* space for border */
   box-sizing: border-box;
+}
+
+.dot[style*="background-color: black"] {
+  background-color: black;
+}
+
+.dot[style*="background-color: black"].selected {
+  border: 2px solid white;   /* white border for black dot */
 }
 
 .product-colors {

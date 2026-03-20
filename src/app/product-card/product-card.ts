@@ -13,9 +13,10 @@ export class ProductCard {
   currentIndex: number = 0;
   selectedDotIndex: number | null = null;
 
-selectDot(index: number): void {
-  this.selectedDotIndex = index;
-}
+  selectDot(index: number): void {
+    this.selectedDotIndex = index;
+    this.currentIndex = index;
+  }
 
    getSelectedUrl(): string {
     return this.products[this.currentIndex].url;
