@@ -26,7 +26,7 @@ export class Catalog {
   }
 
   selectPreviousPage(): void {
-    if(this.selectedPage > 1) {
+    if(this.selectedPage > 0) {
       this.selectedPage --;
     }
     this.updatePageNumber();

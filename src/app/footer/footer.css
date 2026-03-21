@@ -1,6 +1,53 @@
 .footer-container {
-    background-color: #5c5c5c;
-    padding: 20px;
+    background-color: #F3F3F3;
+    padding: 14px;
     text-align: center;
     font-family: Poppins, sans-serif;
+    row-gap: 40px;
+    display: grid;
+
 }
+.stay-in-touch,.customer-contact,.customer-services,.info .title {
+    font: 12px Poppins, sans-serif;
+    color: #5C5C5C;
+    font-weight: 600;
+    letter-spacing: .18em;
+
+}
+.customer-contact,.customer-services,.info,.stay-in-touch {
+    text-align: left;
+    
+}
+
+ul  {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+li{
+    font: 14px Poppins, sans-serif;
+    color: #5C5C5CA6;
+    margin-top: 16px;
+}
+
+.form-control {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.email-input {
+    padding: 10.4px 12.8px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.subscribe-button {
+    margin-top: 8px;
+    border: 1px solid #5c5c5c;
+    color:#ffffff;
+    background: #5c5c5c;
+    padding: 10.4px 20px;
+}
+
+
