@@ -39,3 +39,25 @@
     font-size: 20px;       /* slightly larger icon */
     color: #404040; 
 }
+
+.catalog-pages {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  color: #5C5C5C; 
+  font: 12px Poppins, sans-serif;
+}
+.page-control {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.page-number {
+  padding: 4px 2px;
+  cursor: pointer;
+  
+}
+.page-number.selected {
+  text-decoration: underline;
+}

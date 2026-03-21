@@ -20,4 +20,16 @@
     
     <!-- more products -->
   </div>
+  <div class="catalog-pages">
+    <div class="page-control" (click)="selectPreviousPage()">&lt;</div>
+    @for (page of numberOfPages; track page) {
+      <div class="page-number"
+          (click)="selectPage(page)"
+          [class.selected]="page === selectedPage">
+        {{ page + 1 }}
+      </div>
+  }
+    <div class="page-control" (click)="selectNextPage()">&gt;</div>
+
+  </div>
 </div>
