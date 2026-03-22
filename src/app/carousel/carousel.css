@@ -1,0 +1,61 @@
+.carousel-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+.carousel-track {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  object-fit: cover;
+  height: 40vh;
+  border-radius: 8px;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.5);
+}
+
+.overlay.top-left { top: 8px; left: 8px; }
+.overlay.top-right { top: 8px; right: 8px; }
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: #ccc;
+  display: inline-block;
+}
+
+.dots span.active {
+  background: #333;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}

@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Product } from '../product';
 import { ProductCard } from '../product-card/product-card';
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-catalog',
   imports: [MatIconModule,ProductCard,CommonModule],
@@ -17,6 +18,8 @@ export class Catalog {
     { url: 'assets/cup4.jpg', title: 'Cup 4' },
     { url: 'assets/cup5.jpg', title: 'Cup 5' },
   ];
+
+  constructor(private router: Router) {}
 
   selectedPage: number = 0;
   numberOfPages: number[] = [0,1,2,3,4]; 
@@ -45,5 +48,9 @@ export class Catalog {
       elements[i].classList.remove("selected");
     }
     elements[this.selectedPage].classList.add("selected");
+  }
+
+  openProduct() {
+    this.router.navigate(['/product']);  // always goes to same product page
   }
 }

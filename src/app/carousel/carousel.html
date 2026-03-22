@@ -1,0 +1,20 @@
+<div class="carousel-container" [class.mobile]="isMobile">
+  <div class="carousel-track" (scroll)="onScroll($event)">
+    <div class="carousel-item" *ngFor="let img of images; let i = index">
+      <img [src]="img" alt="carousel image">
+
+      <!-- Optional overlays -->
+      <div class="overlay top-left" *ngIf="topLeft">{{ topLeft }}</div>
+      <div class="overlay top-right" *ngIf="topRight">{{ topRight }}</div>
+    </div>
+  </div>
+
+  <!-- Pagination dots -->
+  
+
+  
+</div>
+<div class="dots">
+    <span *ngFor="let img of images; let i = index"
+          [class.active]="i === currentIndex"></span>
+  </div>
