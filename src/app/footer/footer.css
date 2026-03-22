@@ -7,14 +7,14 @@
     display: grid;
 
 }
-.stay-in-touch,.customer-contact,.customer-services,.info .title {
+.stay-in-touch,.customer-contact,.customer-services,.info,.social-media .title,.copyright {
     font: 12px Poppins, sans-serif;
     color: #5C5C5C;
     font-weight: 600;
     letter-spacing: .18em;
 
 }
-.customer-contact,.customer-services,.info,.stay-in-touch {
+.customer-contact,.customer-services,.info,.stay-in-touch,.social-media {
     text-align: left;
     
 }
@@ -31,11 +31,12 @@ li{
 }
 
 .form-control {
-    display: grid;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .email-input {
+    flex: 1;
     padding: 10.4px 12.8px; 
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -43,11 +44,21 @@ li{
 }
 
 .subscribe-button {
+    width:50%;
     margin-top: 8px;
     border: 1px solid #5c5c5c;
     color:#ffffff;
     background: #5c5c5c;
     padding: 10.4px 20px;
+    margin-top: 30px;
 }
+
+.social-media ul li{
+    display:inline;
+    margin-right: 10px;
+}
+
+
+
 
 
