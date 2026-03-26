@@ -1,0 +1,47 @@
+.product-details {
+  padding: 10px;
+  font-family: poppins, sans-serif; 
+  color: #5C5C5CA6;
+  font-weight: 600;
+}
+.product-name {
+  font-size: 18px;
+  color: #5C5C5C;
+}
+.original-price {
+  text-decoration: line-through;
+  margin-left: 10px;
+  color: #5C5C5C;
+  letter-spacing: 1px;
+}
+.discounted-price {
+  letter-spacing: 1px;
+  color: red;
+  font-weight: bold;
+}
+.tax-included{
+    font-size: 13px;
+    color: #5C5C5CA6;
+    margin-top: 10px;
+    display: block;
+}
+.row{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.column{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.color-option {
+  width: 70px;           /* smaller, consistent size */
+  height: 70px;
+  background-size: contain; /* scales image to fit */
+  background-repeat: no-repeat;
+  background-position: center; /* centers the image */
+  border: 1px solid #ccc; /* optional: gives a frame */
+  border-radius: 2px;     /* optional: rounded corners */
+  cursor: pointer;  
+}
