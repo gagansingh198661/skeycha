@@ -16,11 +16,15 @@
   <div class="product-color-options row">
     <div style="display: block;">Color: White</div>
     <div class="colors column">
-      <div class="color-option" style="background-image: url('assets/necklace_1.webp');"></div>
-      <div class="color-option" style="background-image: url('assets/necklace_2.webp');"></div>
-      
+      <div class="color-option" [class.selected]="colorSelected === 'black'" style="background-image: url('assets/necklace_1.webp');" (click)="optionSelected('black')"></div>
+      <div class="color-option" [class.selected]="colorSelected === 'white'" style="background-image: url('assets/necklace_2.webp');" (click)="optionSelected('white')"></div>
     </div>
-
   </div>
-  <p></p>
+  <div class="quantity-container row">
+    <div class="quantity-inner-container">
+      <button class="quantity-button">+</button>
+      <span class="quantity">1</span>
+      <button class="quantity-button">−</button> <!-- U+2212 minus --> 
+    </div>  
+  </div>
 </div>

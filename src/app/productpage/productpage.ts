@@ -7,4 +7,9 @@ import { Carousel } from '../carousel/carousel';
   templateUrl: './productpage.html',
   styleUrl: './productpage.css',
 })
-export class Productpage {}
+export class Productpage {
+  colorSelected?:string;
+  optionSelected(option: string): void {
+    this.colorSelected = option;
+  }
+}

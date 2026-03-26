@@ -43,5 +43,38 @@
   background-position: center; /* centers the image */
   border: 1px solid #ccc; /* optional: gives a frame */
   border-radius: 2px;     /* optional: rounded corners */
-  cursor: pointer;  
+  cursor: pointer;
+  margin-right: 2px;
+}
+.color-option.selected {
+  border: 2px solid #5C5C5CA6;   /* outer circle */
+  padding: 2px;             /* space for border */
+  box-sizing: border-box;
+}
+.quantity-inner-container{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #5C5C5CA6;
+  width: max-content;
+}
+.quantity-button{
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: white;
+  color: #5C5C5CA6;
+  font-size: 18px;
+  cursor: pointer;
+  display: grid;
+  place-items: center; /* Centers content both vertically and horizontally */
+}
+.quantity{
+  border: none;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  font-size: 12px;
+  display: grid;
+  place-items: center; /* Centers content both vertically and horizontally */
+
 }
