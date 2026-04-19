@@ -108,17 +108,46 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 15px;
+  margin-top: 10px;
 
 }
-product-offers{
+.product-offers{
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  border: 1px solid #5C5C5CA6;
+  gap: 5px;
+  border: 0.5px solid #5C5C5CA6;
   padding:  2px;
 }
 .product-offers-heading p{
   font-size: 14px;
+}
+.small-icon{
+  width: 80px;
+  height: 80px;
+  margin-right: 5px;
+}
+.payment-icon{
+  width: 46px;
+  height: 30px;
+}
+
+/* Remove shadows */
+.mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+/* Remove rounded corners */
+.mat-expansion-panel,
+.mat-expansion-panel-header {
+  border-radius: 0 !important;
+  padding-left: 0px;
+}
+
+.font-property-16{
+  font:14px poppins, sans-serif 600 !important;
+  color: #5C5C5CA6;
+}
+::ng-deep .mat-expansion-panel-body {
+  padding: 0px !important;
 }
