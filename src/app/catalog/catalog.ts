@@ -19,6 +19,9 @@ export class Catalog {
     { url: 'assets/cup5.jpg', title: 'Cup 5' },
   ];
 
+  cardHeight = '200px';
+  cardWidth = '200px';
+
   constructor(private router: Router) {}
 
   selectedPage: number = 0;

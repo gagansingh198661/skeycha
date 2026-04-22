@@ -94,6 +94,15 @@
       </p>
     </mat-expansion-panel>
   </mat-accordion>
-
+  <div class="row">
+    <div class="catalog-products">
+    <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight" ></app-product-card>
+    <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+    <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+    <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+    <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+    <!-- more products -->
+  </div>
+  </div>
 
 </div>

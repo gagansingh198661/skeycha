@@ -151,3 +151,10 @@
 ::ng-deep .mat-expansion-panel-body {
   padding: 0px !important;
 }
+
+.catalog-products {
+  display: flex;
+  overflow-x: auto;           /* Enable horizontal scrolling */
+  gap: 16px;
+  padding: 5px;
+}
