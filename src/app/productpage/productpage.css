@@ -158,3 +158,19 @@
   gap: 16px;
   padding: 5px;
 }
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0px;        /* hidden off-screen initially */
+  width: 300px;         /* covers part of the page, not full width */
+  height: 100%;
+  background: #f9f9f9;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;  /* smooth slide-in */
+  overflow-y: auto;             /* scroll vertically if content is long */
+}
+
+.cart-drawer.open {
+  right: 0;              /* slides into view */
+}
