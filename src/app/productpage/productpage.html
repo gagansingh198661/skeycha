@@ -28,7 +28,7 @@
     </div>  
   </div>
   <div class="action-buttons row">
-    <button class="add-to-cart-button font-property">Add to Cart</button>
+    <button class="add-to-cart-button font-property" (click)="toggleCart()">Add to Cart</button>
     <button class="buy-now-button font-property">Buy IT Now</button>
   </div>
   
@@ -105,6 +105,7 @@
     </div>
   </div>
 </div>
+<div id="overlay" class="overlay" (click)="toggleCart()"></div>
 <div id="cart" class="cart-drawer">
   <h2>Your Cart</h2>
   <p>Item 1</p>

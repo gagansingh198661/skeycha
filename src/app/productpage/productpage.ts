@@ -23,4 +23,15 @@ export class Productpage {
   optionSelected(option: string): void {
     this.colorSelected = option;
   }
+
+   toggleCart(): void {
+    // Implement the logic to toggle the cart visibility
+    console.log('Cart toggled');
+    const cart = document.getElementById('cart');
+    const overlay = document.getElementById('overlay');
+    if (cart && overlay) {
+      cart.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+  }
 }
