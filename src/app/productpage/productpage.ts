@@ -3,9 +3,13 @@ import { Carousel } from '../carousel/carousel';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { Product } from '../product';
 import { ProductCard } from '../product-card/product-card';
+import { CommonModule } from '@angular/common';
+import { GuaranteeDto } from '../GuaranteeDto';
+
 @Component({
   selector: 'app-productpage',
-  imports: [Carousel, MatExpansionModule,ProductCard],
+  imports: [Carousel, MatExpansionModule,ProductCard,
+    CommonModule],
   templateUrl: './productpage.html',
   styleUrl: './productpage.css',
 })
@@ -13,6 +17,11 @@ export class Productpage {
   colorSelected?:string;
   cardHeight = '200px';
   cardWidth = '200px';
+  activeIndex = 0;
+  contents : GuaranteeDto[] = [
+    { guaranteeTitle: 'Secure Payment', guaranteeDescription: 'Your Payment Information is processed Securely', guaranteeIcon: 'fa-solid fa-shield-halved'},
+    { guaranteeTitle: 'Free Shipping', guaranteeDescription: 'Free Pan India Shipping above INR 499 and Returns & duties taxes included', guaranteeIcon: 'fa-solid fa-truck' },
+  ];
   slides : Product[] = [
       { url: 'assets/cup1.jpg', title: 'Cup 1' },
       { url: 'assets/cup2.jpg', title: 'Cup 2' },
@@ -33,5 +42,10 @@ export class Productpage {
       cart.classList.toggle('open');
       overlay.classList.toggle('open');
     }
+  }
+  
+  setActive(index: number): void {
+     console.log('Active index set to:', index);
+     this.activeIndex = index;
   }
 }

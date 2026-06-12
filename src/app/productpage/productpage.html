@@ -56,9 +56,8 @@
 
   <hr style="color: gray;">
 
-  <hr style="color: gray;">
   <mat-accordion>
-    <mat-expansion-panel [expanded]="true" > <!-- starts open -->
+    <mat-expansion-panel [expanded]="false" > <!-- starts open -->
       <mat-expansion-panel-header>
         <mat-panel-title class="font-property-16">
           DESCRIPTION
@@ -69,9 +68,8 @@
       </p>
     </mat-expansion-panel>
   </mat-accordion>
-  <hr style="color: gray; margin-top: 10px;">
   <mat-accordion>
-    <mat-expansion-panel [expanded]="true" > <!-- starts open -->
+    <mat-expansion-panel [expanded]="false" > <!-- starts open -->
       <mat-expansion-panel-header>
         <mat-panel-title class="font-property-16">
           SPECIFICATIONS
@@ -83,7 +81,7 @@
     </mat-expansion-panel>
   </mat-accordion>
   <mat-accordion>
-    <mat-expansion-panel [expanded]="true" > <!-- starts open -->
+    <mat-expansion-panel [expanded]="false" > <!-- starts open -->
       <mat-expansion-panel-header>
         <mat-panel-title class="font-property-16">
           WHY CHOOSE ?
@@ -111,3 +109,32 @@
   <p>Item 1</p>
   <p>Item 2</p>
 </div>
+
+<div class="slider-container">
+  <div class="content-wrapper">
+    <div *ngFor="let item of contents; let i = index"
+      class="content" [class.active]="i === activeIndex">
+      <div style="display: flex; justify-content: center;margin-top:10px;">
+       <i class={{item.guaranteeIcon}} style="font-size: 1.93em;"></i>
+      </div>
+      <div style="display: flex; justify-content: center;margin-top:5px;">
+        <h3>{{item.guaranteeTitle}}</h3>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <p>{{item.guaranteeDescription}}</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Dot navigation -->
+  <div class="dots">
+    <span 
+      *ngFor="let item of contents; let i = index" 
+      class="dot" 
+      [class.active]="i === activeIndex" 
+      (click)="setActive(i)">
+    </span>
+  </div>
+</div>
+

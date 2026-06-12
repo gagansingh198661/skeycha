@@ -191,3 +191,47 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-wrapper {
+  position: relative;
+  height: 150px; /* fixed height for animation */
+  width: 90%;
+}
+
+.content {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.content.active {
+               /* slide into view */
+  display: block;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 15px;
+  background: #867676;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #333;
+}
+
