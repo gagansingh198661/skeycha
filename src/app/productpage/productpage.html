@@ -137,16 +137,27 @@
 <div id="overlay" class="overlay" (click)="toggleCart()">
     
   <div id="cart" class="cart-drawer">
-    <h2>Cart</h2>
+    <div style="display: flex;"><div style="position: fixed;
+     width: 100%;margin-bottom: 20px; padding-left: 10px;background-color: white;
+     ">
+      <h3 class="cartText">Cart</h3>
+    </div></div>
+    
     <br/>
-    <div class="freeDelivery" style="padding-left: 15px;padding-right: 15px;">
-      <p>You are Eligible For Free Delivery</p>
+    <div style="display: flex;">
+        <div class="freeDelivery" style="background-color: white;">
+          <p style="line-height: 35px;">You are Eligible For Free Delivery</p>
+        </div>
     </div>
+    
     <br/>
-    <div style="height: 100vh;">
+    <div style="height: 900px;">
     @for(item of cartDtos; track item.id){
       <app-cart-item [cartDto]="item" ></app-cart-item>   
     }
+    </div>
+    <div class="footer">
+      
     </div>
      
   </div>

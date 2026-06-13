@@ -57,12 +57,7 @@ export class Productpage {
       overlay.classList.toggle('open');
       this.cartOpen=!this.cartOpen;
     }
-    if (this.cartOpen && productpageContainer) {
-      //document.body.style.overflow = 'hidden';
-      
-    }else if(!this.cartOpen) {
-      //document.body.style.overflow = 'visible';
-    }
+    
 
   }
   
