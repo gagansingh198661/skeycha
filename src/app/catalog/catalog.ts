@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Product } from '../product';
+import { Product } from '../dtos/product';
 import { ProductCard } from '../product-card/product-card';
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { Router } from '@angular/router';

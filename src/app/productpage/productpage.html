@@ -1,140 +1,154 @@
-<app-carousel
-  [isMobile]="true"
-  [images]="['/assets/cup1.jpg','/assets/cup2.jpg','/assets/cup3.jpg']"
-  topLeft="Sale!"
-  topRight="Limited Edition">
-</app-carousel>
-<div class="product-details">
-  <span class="brand">Skeycha</span>
-  <h2 class="product-name">Skeycha Pearl Necklace</h2>
-  <h2 class="product-badge">Authentic Tibetan Jewellery</h2>
-  <div style="display: flex;">
-    <div><span class="discounted-price">₹ 1,999</span></div>
-    <div class="original-price"><span >₹ 2,499</span></div>
-  </div>
-  <div class="tax-included">Tax included. Shipping calculated at checkout</div>
-  <div class="product-color-options row">
-    <div style="display: block;">Color: White</div>
-    <div class="colors column">
-      <div class="color-option" [class.selected]="colorSelected === 'black'" style="background-image: url('assets/necklace_1.webp');" (click)="optionSelected('black')"></div>
-      <div class="color-option" [class.selected]="colorSelected === 'white'" style="background-image: url('assets/necklace_2.webp');" (click)="optionSelected('white')"></div>
+<div id="productpage-container" >
+  <app-carousel
+    [isMobile]="true"
+    [images]="['/assets/cup1.jpg','/assets/cup2.jpg','/assets/cup3.jpg']"
+    topLeft="Sale!"
+    topRight="Limited Edition">
+  </app-carousel>
+  <div class="product-details">
+    <span class="brand">Skeycha</span>
+    <h2 class="product-name">Skeycha Pearl Necklace</h2>
+    <h2 class="product-badge">Authentic Tibetan Jewellery</h2>
+    <div style="display: flex;">
+      <div><span class="discounted-price">₹ 1,999</span></div>
+      <div class="original-price"><span >₹ 2,499</span></div>
     </div>
-  </div>
-  <div class="quantity-container row">
-    <div class="quantity-inner-container">
-      <button class="quantity-button">+</button>
-      <span class="quantity">1</span>
-      <button class="quantity-button">−</button> <!-- U+2212 minus --> 
-    </div>  
-  </div>
-  <div class="action-buttons row">
-    <button class="add-to-cart-button font-property" (click)="toggleCart()">Add to Cart</button>
-    <button class="buy-now-button font-property">Buy IT Now</button>
-  </div>
-  
+    <div class="tax-included">Tax included. Shipping calculated at checkout</div>
+    <div class="product-color-options row">
+      <div style="display: block;">Color: White</div>
+      <div class="colors column">
+        <div class="color-option" [class.selected]="colorSelected === 'black'" style="background-image: url('assets/necklace_1.webp');" (click)="optionSelected('black')"></div>
+        <div class="color-option" [class.selected]="colorSelected === 'white'" style="background-image: url('assets/necklace_2.webp');" (click)="optionSelected('white')"></div>
+      </div>
+    </div>
+    <div class="quantity-container row">
+      <div class="quantity-inner-container">
+        <button class="quantity-button">+</button>
+        <span class="quantity">1</span>
+        <button class="quantity-button">−</button> <!-- U+2212 minus --> 
+      </div>  
+    </div>
+    <div class="action-buttons row">
+      <button class="add-to-cart-button font-property" (click)="toggleCart()">Add to Cart</button>
+      <button class="buy-now-button font-property">Buy IT Now</button>
+    </div>
     
-  <div class="product-offers row">
-    <div class="product-offers-heading"><p>GET 5% OFF</p></div>
-    <div class="prose"><p>On all Prepaid Orders</p></div>
-  </div>
-
-  <div class="business-features row">
-    <div class="business-features-content">
-      <img src="assets/customer_support.png" class="small-icon"/>
-      <img src="assets/fast_shipping.png" class="small-icon"/>
-      <img src="assets/customer_support.png" class="small-icon"/>
-      <img src="assets/money_back_guarantee.png" class="small-icon"/>
-    </div> 
-  </div>
-  <div class="payment-options row">
-    <div class="payment-options-content">
-      <img src="assets/google-pay_vsgfvw.svg" class="payment-icon"/>
-      <img src="assets/mastercard_xpojxv.svg" class="payment-icon"/>
-      <img src="assets/visa_phr8oq.svg" class="payment-icon"/>
-    </div> 
-  </div>
-
-  <hr style="color: gray;">
-
-  <mat-accordion>
-    <mat-expansion-panel [expanded]="false" > <!-- starts open -->
-      <mat-expansion-panel-header>
-        <mat-panel-title class="font-property-16">
-          DESCRIPTION
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>
-        The Midori MD Notebook A5 Blank – Off White is a beautifully minimal notebook designed to deliver an exceptional writing experience. Crafted in Japan, the notebook features Midori’s signature MD Paper, specially developed to provide smooth writing with minimal bleed-through and excellent ink absorption.
-      </p>
-    </mat-expansion-panel>
-  </mat-accordion>
-  <mat-accordion>
-    <mat-expansion-panel [expanded]="false" > <!-- starts open -->
-      <mat-expansion-panel-header>
-        <mat-panel-title class="font-property-16">
-          SPECIFICATIONS
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>
-        The Midori MD Notebook A5 Blank – Off White is a beautifully minimal notebook designed to deliver an exceptional writing experience. Crafted in Japan, the notebook features Midori’s signature MD Paper, specially developed to provide smooth writing with minimal bleed-through and excellent ink absorption.
-      </p>
-    </mat-expansion-panel>
-  </mat-accordion>
-  <mat-accordion>
-    <mat-expansion-panel [expanded]="false" > <!-- starts open -->
-      <mat-expansion-panel-header>
-        <mat-panel-title class="font-property-16">
-          WHY CHOOSE ?
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>
-        The Midori MD Notebook A5 Blank – Off White is a beautifully minimal notebook designed to deliver an exceptional writing experience. Crafted in Japan, the notebook features Midori’s signature MD Paper, specially developed to provide smooth writing with minimal bleed-through and excellent ink absorption.
-      </p>
-    </mat-expansion-panel>
-  </mat-accordion>
-  <div class="row">
-    <div class="catalog-products">
-      <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight" ></app-product-card>
-      <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
-      <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
-      <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
-      <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
-    <!-- more products -->
-    </div>
-  </div>
-</div>
-<div id="overlay" class="overlay" (click)="toggleCart()"></div>
-<div id="cart" class="cart-drawer">
-  <h2>Your Cart</h2>
-  <p>Item 1</p>
-  <p>Item 2</p>
-</div>
-
-<div class="slider-container">
-  <div class="content-wrapper">
-    <div *ngFor="let item of contents; let i = index"
-      class="content" [class.active]="i === activeIndex">
-      <div style="display: flex; justify-content: center;margin-top:10px;">
-       <i class={{item.guaranteeIcon}} style="font-size: 1.93em;"></i>
-      </div>
-      <div style="display: flex; justify-content: center;margin-top:5px;">
-        <h3>{{item.guaranteeTitle}}</h3>
-      </div>
-      <div style="display: flex; justify-content: center;">
-        <p>{{item.guaranteeDescription}}</p>
-      </div>
       
+    <div class="product-offers row">
+      <div class="product-offers-heading"><p>GET 5% OFF</p></div>
+      <div class="prose"><p>On all Prepaid Orders</p></div>
+    </div>
+
+    <div class="business-features row">
+      <div class="business-features-content">
+        <img src="assets/customer_support.png" class="small-icon"/>
+        <img src="assets/fast_shipping.png" class="small-icon"/>
+        <img src="assets/customer_support.png" class="small-icon"/>
+        <img src="assets/money_back_guarantee.png" class="small-icon"/>
+      </div> 
+    </div>
+    <div class="payment-options row">
+      <div class="payment-options-content">
+        <img src="assets/google-pay_vsgfvw.svg" class="payment-icon"/>
+        <img src="assets/mastercard_xpojxv.svg" class="payment-icon"/>
+        <img src="assets/visa_phr8oq.svg" class="payment-icon"/>
+      </div> 
+    </div>
+
+    <hr style="color: gray;">
+
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="false" > <!-- starts open -->
+        <mat-expansion-panel-header>
+          <mat-panel-title class="font-property-16">
+            DESCRIPTION
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          The Midori MD Notebook A5 Blank – Off White is a beautifully minimal notebook designed to deliver an exceptional writing experience. Crafted in Japan, the notebook features Midori’s signature MD Paper, specially developed to provide smooth writing with minimal bleed-through and excellent ink absorption.
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="false" > <!-- starts open -->
+        <mat-expansion-panel-header>
+          <mat-panel-title class="font-property-16">
+            SPECIFICATIONS
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          The Midori MD Notebook A5 Blank – Off White is a beautifully minimal notebook designed to deliver an exceptional writing experience. Crafted in Japan, the notebook features Midori’s signature MD Paper, specially developed to provide smooth writing with minimal bleed-through and excellent ink absorption.
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="false" > <!-- starts open -->
+        <mat-expansion-panel-header>
+          <mat-panel-title class="font-property-16">
+            WHY CHOOSE ?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          The Midori MD Notebook A5 Blank – Off White is a beautifully minimal notebook designed to deliver an exceptional writing experience. Crafted in Japan, the notebook features Midori’s signature MD Paper, specially developed to provide smooth writing with minimal bleed-through and excellent ink absorption.
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div class="row">
+      <div class="catalog-products">
+        <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight" ></app-product-card>
+        <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+        <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+        <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+        <app-product-card [products]="slides" [style.--customWidth]="cardWidth" [style.--customHeight]="cardHeight"></app-product-card>
+      <!-- more products -->
+      </div>
     </div>
   </div>
 
-  <!-- Dot navigation -->
-  <div class="dots">
-    <span 
-      *ngFor="let item of contents; let i = index" 
-      class="dot" 
-      [class.active]="i === activeIndex" 
-      (click)="setActive(i)">
-    </span>
+
+  <div class="slider-container">
+    <div class="content-wrapper">
+      <div *ngFor="let item of contents; let i = index"
+        class="content" [class.active]="i === activeIndex">
+        <div style="display: flex; justify-content: center;margin-top:10px;">
+        <i class={{item.guaranteeIcon}} style="font-size: 1.93em;"></i>
+        </div>
+        <div style="display: flex; justify-content: center;margin-top:5px;">
+          <h3>{{item.guaranteeTitle}}</h3>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <p>{{item.guaranteeDescription}}</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Dot navigation -->
+    <div class="dots">
+      <span 
+        *ngFor="let item of contents; let i = index" 
+        class="dot" 
+        [class.active]="i === activeIndex" 
+        (click)="setActive(i)">
+      </span>
+    </div>
   </div>
+</div>
+<div id="overlay" class="overlay" (click)="toggleCart()">
+    
+  <div id="cart" class="cart-drawer">
+    <h2>Cart</h2>
+    <br/>
+    <div class="freeDelivery" style="padding-left: 15px;padding-right: 15px;">
+      <p>You are Eligible For Free Delivery</p>
+    </div>
+    <br/>
+    
+    @for(item of cartDtos; track item.id){
+      <app-cart-item [cartDto]="item" ></app-cart-item>   
+    }
+     
+  </div>
+
 </div>
 
