@@ -58,10 +58,10 @@ export class Productpage {
       this.cartOpen=!this.cartOpen;
     }
     if (this.cartOpen && productpageContainer) {
-      productpageContainer.style.overflow = 'hidden';
+      //document.body.style.overflow = 'hidden';
       
     }else if(!this.cartOpen) {
-      document.body.style.overflow = 'visible';
+      //document.body.style.overflow = 'visible';
     }
 
   }

@@ -143,10 +143,11 @@
       <p>You are Eligible For Free Delivery</p>
     </div>
     <br/>
-    
+    <div style="height: 100vh;">
     @for(item of cartDtos; track item.id){
       <app-cart-item [cartDto]="item" ></app-cart-item>   
     }
+    </div>
      
   </div>
 

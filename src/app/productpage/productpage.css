@@ -160,6 +160,7 @@
 }
 
 .cart-drawer {
+  overscroll-behavior: contain;
   position: fixed;
   top: 0;
   right: -350px;        /* hidden off-screen initially */
@@ -168,7 +169,7 @@
   background: #f9f9f9;
   box-shadow: -2px 0 5px rgba(0,0,0,0.2);
   transition: right 0.3s ease;  /* smooth slide-in */
-  overflow-y: auto;  
+  overflow-y: scroll;  
   z-index: 11;           /* scroll vertically if content is long */
 }
 
