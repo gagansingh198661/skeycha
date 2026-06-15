@@ -1,0 +1,26 @@
+<div class="cartItemContainer" style="padding-left: 15px;padding-right: 15px;">
+    <div class="cart-tem-Image">
+        <img src="{{orderDto?.productImgUrl}}" style="width: 100px; height: 100px;"/>
+    </div>
+    <div class="cart-item-description">
+        <div>
+            <h3>{{orderDto?.productName}}</h3>
+        </div>
+        <div>
+            <p>{{orderDto?.productPrice}}</p>
+        </div>
+        <div >
+            <p>{{orderDto?.productDescription}}</p>
+        </div>
+        <div>
+            <div class="quantity-container row">
+                <div class="quantity-inner-container">
+                    <button class="quantity-button">+</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-button">−</button> <!-- U+2212 minus --> 
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>

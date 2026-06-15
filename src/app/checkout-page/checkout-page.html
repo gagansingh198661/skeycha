@@ -1,1 +1,40 @@
-<p>checkout-page works!</p>
+<div class="checkout-container" id="checkout-container">
+    <div class="status" id="status" >
+        <div class="options" style="display: 
+        flex;flex-direction: row;">
+            <div style="margin-right: 40%;margin-left: 10px;"><p>Contact</p></div>
+            <div><p>></p></div>
+        </div>
+        <div class="options" style="display: flex;
+        flex-direction: row;font-style: italic;">
+            <div style="margin-right: 40%;margin-left: 10%;"><p>Address</p></div>
+            <div><p>></p></div>
+        </div>
+        <div class="options" style="font-style: italic;">
+            <div style="margin-left: 10%;"><p>Payment</p></div>
+        </div>
+    </div>
+
+    <div id="order-summary" class="order-summary" >
+        <div style="display: flex;flex-direction: row;justify-content: space-between;
+        height: 50px;">
+            <div style="margin-left: 10px;"><p>Order Summary</p></div>
+            <div style="margin-right: 20px;"><p>10,958</p></div>
+        </div>
+        <hr style="margin-left: 10px;margin-right: 10px;"/>
+        <div style="display: flex;flex-direction: row;justify-content: space-between;
+        height: 50px;">
+            <div style="margin-left: 10px;"><p>3 Total Items</p></div>
+            <div style="margin-right: 20px;cursor:pointer;" (click)="toggleItems()">
+                <p id="showItemsIcon" class="circle-plus">+</p>
+            </div>
+        </div>  
+        
+        <div class="order-items" [class.show]="showItems">
+            <hr style="margin-left: 10px;margin-right: 10px;"/>
+            @for(item of cartDtos; track item.id){
+                <app-order-item [orderDto]="item" ></app-order-item>   
+            }
+        </div>
+    </div>
+</div>

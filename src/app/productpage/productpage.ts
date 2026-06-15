@@ -65,9 +65,6 @@ export class Productpage {
         this.cartOpen=!this.cartOpen;
       }
     }
-    
-    
-
   }
   
   setActive(index: number): void {

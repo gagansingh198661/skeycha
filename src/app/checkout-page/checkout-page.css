@@ -1,0 +1,44 @@
+.checkout-container{
+    display: flex   ;
+    flex-direction: column;
+    border: 1px solid black;
+}
+.status{
+    border: 1px solid black;
+    
+     
+    border-radius: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.order-summary{
+    border: 1px solid black;
+     
+    border-radius: 10px;
+    width: 100%;
+}
+
+.order-items.show {
+  max-height: 500px; /* adjust based on content */
+  opacity: 1;
+}
+
+.order-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.circle-plus {
+  display: inline-flex;          /* keeps + centered */
+  justify-content: center;
+  align-items: center;
+  width: 15px;                   /* circle size */
+  height: 15px;
+  border: 1px solid black;       /* circle border */
+  border-radius: 50%;            /* makes it round */
+  font-weight: bold;
+  cursor: pointer;               /* optional: makes it clickable */
+}
