@@ -160,6 +160,8 @@
 }
 
 .cart-drawer {
+  display: flex;
+  flex-direction: column;
   overscroll-behavior: contain;
   position: fixed;
   top: 0;

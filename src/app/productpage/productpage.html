@@ -136,29 +136,51 @@
 </div>
 <div id="overlay" class="overlay" (click)="toggleCart()">
     
-  <div id="cart" class="cart-drawer">
-    <div style="display: flex;"><div style="position: fixed;
-     width: 100%;margin-bottom: 20px; padding-left: 10px;background-color: white;
-     ">
-      <h3 class="cartText">Cart</h3>
-    </div></div>
-    
-    <br/>
-    <div style="display: flex;">
-        <div class="freeDelivery" style="background-color: white;">
-          <p style="line-height: 35px;">You are Eligible For Free Delivery</p>
-        </div>
+  <div id="cart" class="cart-drawer" style="display: flex;flex-direction: column">
+    <div style="display: flex">
+      <div style="width: 100%;padding-left: 10px;background-color: white;
+        ;">
+          <h3 class="cartText">Cart</h3>
+      </div>
     </div>
     
-    <br/>
-    <div style="height: 900px;">
-    @for(item of cartDtos; track item.id){
-      <app-cart-item [cartDto]="item" ></app-cart-item>   
-    }
-    </div>
-    <div class="footer">
+    <div style="overflow: scroll;height: 47%;">
       
+      <div style="display: flex;">
+          <div class="freeDelivery" style="background-color: white;">
+            <p >You are Eligible For Free Delivery</p>
+          </div>
+      </div>
+    
+      <div >
+      @for(item of cartDtos; track item.id){
+        <app-cart-item [cartDto]="item" ></app-cart-item>   
+      }
+      </div>
     </div>
+    
+    
+
+    <div >
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: block;margin-left: 6px;margin-right: 6px;">
+          <p>
+            Taxes and shipping calculated at checkout
+          </p>
+        </div>
+        <div style="display: block;align-items: center;justify-content: center;">
+          <div style="align-items: center;justify-items: center;background-color: #307a07;padding-top: 2px;padding-bottom: 2px;
+          margin-left: 6px;margin-right: 6px;">
+            <p style="color: white;font-size: 14px;">
+              Checkout
+            </p>
+          </div>  
+          
+        </div>
+      </div>  
+    </div>
+    
+    
      
   </div>
 
