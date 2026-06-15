@@ -30,4 +30,17 @@ export class CheckoutPage {
       
     }
   }
+
+  toggleAddressInfo(tabName: string): void {
+    const addressInfo = document.getElementById('address-info');
+    const contactInfo = document.getElementById('contact-info');
+    if(tabName === 'address') {
+      addressInfo!.style.display = 'block';
+      contactInfo!.style.display = 'none';
+    } else if(tabName === 'contact') {
+      addressInfo!.style.display = 'none';
+      contactInfo!.style.display = 'block';
+    }
+    
+  }
 }
