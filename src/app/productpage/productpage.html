@@ -29,7 +29,7 @@
       </div>  
     </div>
     <div class="action-buttons row">
-      <button class="add-to-cart-button font-property" (click)="toggleCart()">Add to Cart</button>
+      <button id="add-to-cart-button" class="add-to-cart-button font-property" (click)="toggleCart($event)">Add to Cart</button>
       <button class="buy-now-button font-property">Buy IT Now</button>
     </div>
     
@@ -134,7 +134,7 @@
     </div>
   </div>
 </div>
-<div id="overlay" class="overlay" (click)="toggleCart()">
+<div id="overlay" class="overlay" (click)="toggleCart($event)">
     
   <div id="cart" class="cart-drawer" style="display: flex;flex-direction: column">
     <div style="display: flex">
@@ -163,15 +163,15 @@
 
     <div >
       <div style="display: flex; flex-direction: column;">
-        <div style="display: block;margin-left: 6px;margin-right: 6px;">
+        <div style="display: block;margin-left: 6px;">
           <p>
             Taxes and shipping calculated at checkout
           </p>
         </div>
         <div style="display: block;align-items: center;justify-content: center;">
-          <div style="align-items: center;justify-items: center;background-color: #307a07;padding-top: 2px;padding-bottom: 2px;
-          margin-left: 6px;margin-right: 6px;">
-            <p style="color: white;font-size: 14px;">
+          <div style="align-items: center;justify-items: center;background-color: #307a07;padding-top: 10px;padding-bottom: 10px;
+            margin-left: 6px;margin-right: 6px;">
+            <p style="color: white;font-size: 14px;margin-block-start: 0px;margin-block-end: 0px;">
               Checkout
             </p>
           </div>  

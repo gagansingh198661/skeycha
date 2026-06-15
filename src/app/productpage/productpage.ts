@@ -46,17 +46,26 @@ export class Productpage {
 
   constructor(private router: Router) {}
 
-   toggleCart(): void {
+   toggleCart(event:Event): void {
     // Implement the logic to toggle the cart visibility
-    console.log('Cart toggled');
-    const cart = document.getElementById('cart');
-    const overlay = document.getElementById('overlay');
-    const productpageContainer = document.getElementById('productpage-container');
-    if (cart && overlay) {
-      cart.classList.toggle('open');
-      overlay.classList.toggle('open');
-      this.cartOpen=!this.cartOpen;
+    const element = event.target as HTMLElement;
+    // const elementChildren = element.children as HTMLCollectionOf<HTMLElement>;
+    // for (let i = 0; i < elementChildren.length; i++) {
+    //   const child = elementChildren[i];
+    //   console.log('Child element:', child.tagName, 'ID:', child.id);
+    // }
+    
+    console.log('Id of event :'+element.id);
+    if(element.id === 'add-to-cart-button'||element.id === 'overlay'){
+      const cart = document.getElementById('cart');
+      const overlay = document.getElementById('overlay');
+      if (cart && overlay) {
+        cart.classList.toggle('open');
+        overlay.classList.toggle('open');
+        this.cartOpen=!this.cartOpen;
+      }
     }
+    
     
 
   }
