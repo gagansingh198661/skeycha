@@ -1,0 +1,24 @@
+@media (min-width: 600px) {
+  .refunds-inner-container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .title{
+        margin-bottom: 50px;
+    }
+  
+}
+.refunds-container{
+    font-family: Poppins,sans-serif;
+    font-size: larger;
+}
+section{
+    color: #121212BF;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section p{
+    margin-block-end: 5px !important;
+    margin-block-start: 5px !important;
+}

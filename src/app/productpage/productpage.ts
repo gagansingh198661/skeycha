@@ -74,7 +74,6 @@ export class Productpage {
 
   openCheckout(): void {
     // Implement the logic to navigate to the checkout page
-    console.log('Navigating to checkout page');
 
     this.router.navigate(['/checkout']);  // always goes to same product page
   }

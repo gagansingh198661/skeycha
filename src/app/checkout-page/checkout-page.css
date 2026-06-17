@@ -112,4 +112,10 @@
   background-color: #333;    /* slightly lighter black on hover */
 }
 
+.address-info{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+}
+
 
