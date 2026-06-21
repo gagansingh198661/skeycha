@@ -20,7 +20,7 @@
     <section class="customer-services">
         <span class="title">CUSTOMER SERVICES</span>
         <ul>
-            <li>Privacy Policy</li>
+            <li><span class="clickable" (click)="showPrivacyPolicyModal =true">Privacy Policy</span></li>
             <li><a routerLink="/refunds">Refund Policy</a></li>
             <li>Shipping& Returns Policy</li>
             <li>Terms of Service</li>
@@ -49,3 +49,4 @@
 
     </section>
 </div>
+<app-privacy-policy [showPrivacyPolicy]="showPrivacyPolicyModal" (close)="showPrivacyPolicyModal = false"></app-privacy-policy>

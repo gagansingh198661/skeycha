@@ -1,16 +1,16 @@
 .login-page-container{
-    border: 1px solid black;
+    border: 1px solid #808080;
+    border-radius: 10px;
 }
 
 .title{
-        color: #404040;
+        color: #808080;
 }
 
 @media (min-width: 600px) {
   .login-page-container-inner {
         margin-left: 35%;
         margin-right: 35%;
-        border: 1px solid black;
         width: 100%;
     }
     .title{
@@ -60,10 +60,7 @@ button{
     margin-left: 5px;
     margin-right: 5px;
 }
-
-
 .clickable{
     text-decoration: underline;
     cursor: pointer;
-
 }

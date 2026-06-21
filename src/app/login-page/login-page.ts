@@ -12,7 +12,6 @@ export class LoginPage {
   showModal = false;
   openTermsOfService():void{
     this.showModal = true;
-
   }
 
 }
