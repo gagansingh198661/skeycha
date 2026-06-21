@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TermsOfService {
 
-@Input() show = false;                // controls visibility
+@Input() showTermsOfService = false;                // controls visibility
 @Output() close = new EventEmitter<void>();
 
   onClose() {
