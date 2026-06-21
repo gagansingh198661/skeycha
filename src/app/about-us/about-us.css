@@ -1,5 +1,29 @@
+@media (min-width: 600px) {
+  .aboutus-inner-container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .title{
+        margin-bottom: 50px;
+        color: #404040;
+    }
+  
+}
+.title{
+        color: #404040;
+    }
 .aboutus-container{
     font-family: Poppins,sans-serif;
     font-size: larger;
     margin: 10px;
+}
+section{
+    color: #121212BF;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section p{
+    margin-block-end: 5px !important;
+    margin-block-start: 5px !important;
 }

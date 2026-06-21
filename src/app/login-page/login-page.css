@@ -1,0 +1,68 @@
+.login-page-container{
+    border: 1px solid black;
+}
+
+.title{
+        color: #404040;
+}
+
+@media (min-width: 600px) {
+  .login-page-container-inner {
+        margin-left: 35%;
+        margin-right: 35%;
+        border: 1px solid black;
+    }
+    .title{
+        margin-bottom: 50px;
+        color: #404040;
+    }
+  
+}
+.login-email-div{
+    width: 97%;
+    border: 1px solid #dedede;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    margin-top: 20px;
+    row-gap: 5px;
+}
+.email-input{
+    width: 85%;
+    border: none;
+    font-size: medium;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    background: none;
+}
+.continue{
+    border-radius: 8px;
+    width: 97%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #5433eb;
+    color: white;
+    font-family: GTStandard-M, sans-serif;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.standard-margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.clickable{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
