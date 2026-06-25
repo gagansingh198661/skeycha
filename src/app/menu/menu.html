@@ -12,10 +12,10 @@
             <div class="menu-item-image">
                 <mat-icon style="color: #808080;">search</mat-icon>
             </div>
-            <div class="menu-item-image">
-                <a routerLink="/login">
+            <div class="menu-item-image clickable" (click)="openLoginPage()">
+               
                     <mat-icon style="color: #808080;">person</mat-icon>
-                </a>
+               
                 
             </div>
             <div class="menu-item-image">
@@ -24,3 +24,4 @@
         </div>
     </div>
 </div>
+

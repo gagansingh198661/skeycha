@@ -21,3 +21,6 @@ right-menu{
     text-decoration: none;
     font-size: 1.2rem;
 }
+.clickable:hover{
+    cursor: pointer;
+}

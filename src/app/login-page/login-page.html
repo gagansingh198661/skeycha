@@ -1,87 +1,53 @@
-<div class="login-page-container">
-    <div class="login-page-container-inner">
-        <div class="standard-margin" >
-            <h1 class="title">
-                Sign in
-            </h1>
-        </div>
-        
-        <section>
-            <div class="standard-margin">
-                <p>Sign in or create an account.</p>
-            </div>
-            <div class="continue">Continue with shop</div>
-            <div style="margin-top: 20px;margin-bottom: 20px;">
-                <div style="width: 100%;flex-direction: row;display: flex;">
-                    <div style="width: 100%;padding-left: 5px;">
-                        <hr style="color: black; ">
-                    </div>
-                    <p style="margin-block-start:0px;margin-block-end: 0px;">
-                        or
-                    </p>
-                    <div style="width: 100%;padding-right: 5px;">
-                        <hr style="color: black;">
-                    </div>
-                </div>
-                    
-                <div class="login-email-div" >
-                    <input class="email-input" placeholder="Email" />
-                    <button><mat-icon>arrow_forward</mat-icon></button>
-                </div>
-
-                <div class="terms&privacy standard-margin">
-                    <section>
-                        <div style="margin-top: 20px;">
-                            <span style="color: #0000008F;">By continuing, you agree to our <span class="clickable" (click)="openTermsOfService()">terms of service</span></span>
-                        </div>
-                        
-                        <div style="align-items: center;text-align: center;margin-top: 50px;">Privacy Policy</div>
-                    </section>
+<div class="modal" *ngIf="openLogin">
+  <div class="modal-content">
+    <span class="close" (click)="onClose()">&times;</span>
+  
+        <div class="login-page-container">
+            <div class="login-page-container-inner">
+                <div class="standard-margin" >
+                    <h1 class="title">
+                        Sign in
+                    </h1>
                 </div>
                 
+                <section>
+                    <div class="standard-margin">
+                        <p>Sign in or create an account.</p>
+                    </div>
+                    <div class="continue">Continue with shop</div>
+                    <div style="margin-top: 20px;margin-bottom: 20px;">
+                        <div style="width: 100%;flex-direction: row;display: flex;">
+                            <div style="width: 100%;padding-left: 5px;">
+                                <hr style="color: black; ">
+                            </div>
+                            <p style="margin-block-start:0px;margin-block-end: 0px;">
+                                or
+                            </p>
+                            <div style="width: 100%;padding-right: 5px;">
+                                <hr style="color: black;">
+                            </div>
+                        </div>
+                            
+                        <div class="login-email-div" >
+                            <input class="email-input" placeholder="Email" />
+                            <button><mat-icon>arrow_forward</mat-icon></button>
+                        </div>
+
+                        <div class="terms&privacy standard-margin">
+                            <section>
+                                <div style="margin-top: 20px;">
+                                    <span style="color: #0000008F;">By continuing, you agree to our <span class="clickable" (click)="openTermsOfService()">terms of service</span></span>
+                                </div>
+                                
+                                <div style="align-items: center;text-align: center;margin-top: 50px;">Privacy Policy</div>
+                            </section>
+                        </div>
+                        
+                    </div>
+                    
+                </section>
+                
             </div>
-            
-        </section>
-        
+        </div>
     </div>
 </div>
-<app-terms-of-service [showTermsOfService]="showModal" (close)="showModal = false">
-  <h2>Terms Of Service</h2>
-  <span>
-    <p>
-        Welcome to Japanned, your preferred online destination for authentic Japanese food products in India. Before using our website or making a purchase, please carefully read and understand the terms outlined in this Terms of Service agreement. By accessing our website and making a purchase, you agree to comply with these terms.
-        <br><br>
-        <strong>1. Acceptance of Terms:</strong>
-        <br><br>
-        - By using the Japanned website, you acknowledge that you have read, understood, and agreed to these Terms of Service.<br><br>
-        <strong>2. Account Creation:</strong>
-        <br><br>
-        - To make a purchase on Japanned, you may be required to create an account.
-        <br>
-        - You are responsible for maintaining the confidentiality of your account information and password.<br><br>
-        <strong>3. Product Information:</strong>
-        <br><br>
-        - We strive to provide accurate and up-to-date information about our products. However, we do not warrant the accuracy, completeness, or reliability of product descriptions.<br><br>
-        <strong>4. Pricing and Payments:</strong>
-        <br><br>- Prices are listed in Indian Rupees (INR) and are inclusive of applicable taxes.<br>- We reserve the right to change prices at any time without prior notice.<br>- Payments are processed securely through our trusted payment gateways.<br><br>
-        <strong>5. Order Confirmation:</strong>
-        <br><br>- Upon successful completion of your purchase, you will receive an order confirmation email containing details of your order.<br><br>
-        <strong>6. Shipping:</strong>
-        <br><br>
-        - Please refer to our <a href="https://gojapanned.com/pages/shipping-policy">Shipping Policy</a> for information on order processing, shipping methods, and delivery.<br><br><strong>7. Returns and Refunds:</strong>
-        <br><br>- Please refer to our <a href="https://gojapanned.com/pages/return-policy">Return and Refund Policy</a> for information on eligibility, procedures, and timelines for returns and refunds.<br><br>
-        <strong>8. Intellectual Property:</strong>
-        <br><br>- All content on the Japanned website, including text, images, logos, and trademarks, is the property of Japanned and is protected by intellectual property laws.<br><br>
-        <strong>9. User Conduct:</strong>
-        <br><br>- Users are expected to use the Japanned website in a lawful and respectful manner.<br>- Prohibited activities include but are not limited to: unauthorized access, data scraping, and any form of harassment.<br><br>
-        <strong>10. Privacy Policy:</strong>
-        <br><br>- Please review our Privacy Policy to understand how we collect, use, and protect your personal information.<br><br><strong>11. Limitation of Liability:</strong>
-        <br><br>- Japanned shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use of the website or the products purchased.<br><br>
-        <strong>12. Governing Law:</strong>
-        <br><br>- These Terms of Service are governed by and construed in accordance with the laws of India.<br><br>
-        <strong>13. Contact Information:</strong>
-        <br><br>- For any inquiries or concerns related to these Terms of Service, please contact us at support@gojapanned.com.<br><br>
-        <strong>Note:</strong> These Terms of Service are subject to change. Please check our website for the most up-to-date information.
-        <br><br>Thank you for choosing Japanned. We appreciate your business and trust in our services.</p>
-  </span>
-</app-terms-of-service>

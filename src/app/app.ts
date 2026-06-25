@@ -7,10 +7,11 @@ import { Footer } from './footer/footer';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PrivacyPolicy } from './privacy-policy/privacy-policy';
+import { LoginPage } from './login-page/login-page';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,Menu,Catalog,Footer,PrivacyPolicy],
+  imports: [RouterOutlet,Header,Menu,Catalog,Footer,PrivacyPolicy,LoginPage],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
