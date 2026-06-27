@@ -21,8 +21,6 @@ export class LoginPage {
       // We just have to use the source signals 
       // somewhere inside this effect
       this.openLogin = this.modalService.showLogin();
-
-
     });
   }
   openTermsOfService():void{
