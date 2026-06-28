@@ -10,6 +10,9 @@ export class ModalService {
     this.showLogin.set(true);
   }
 
+  closeLoginPage(){
+    this.showLogin.set(false);
+  }
   
 
   

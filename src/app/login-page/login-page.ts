@@ -27,12 +27,12 @@ export class LoginPage {
     //this.showLoginPage = true;
   }
   onClose() {
-    this.close.emit();
+    this.modalService.closeLoginPage();
   }
   
   ngOnInit(): void {
     // Initialization tasks go here
-    this.openLogin = this.modalService.showLogin();
+    
   }
 
 }

@@ -4,17 +4,28 @@
   
         <div class="login-page-container">
             <div class="login-page-container-inner">
-                <div class="standard-margin" >
+                <div class="standard-margin login" >
                     <h1 class="title">
-                        Sign in
+                        Login
                     </h1>
                 </div>
                 
                 <section>
-                    <div class="standard-margin">
-                        <p>Sign in or create an account.</p>
+                    <div class="standard-margin email-div">
+                        <p>Email</p>
                     </div>
-                    <div class="continue">Continue with shop</div>
+                    <div class="login-email-div" >
+                        <input class="email-input"/>
+                    </div>
+
+
+                    <div class="standard-margin email-div">
+                        <p>Password</p>
+                    </div>
+                    <div class="login-password-div" >
+                        <input class="email-input" type="password"/>
+                    </div>
+                    <div class="signInButton">Sign In</div>
                     <div style="margin-top: 20px;margin-bottom: 20px;">
                         <div style="width: 100%;flex-direction: row;display: flex;">
                             <div style="width: 100%;padding-left: 5px;">
@@ -28,20 +39,18 @@
                             </div>
                         </div>
                             
-                        <div class="login-email-div" >
-                            <input class="email-input" placeholder="Email" />
-                            <button><mat-icon>arrow_forward</mat-icon></button>
-                        </div>
-
-                        <div class="terms&privacy standard-margin">
+                        
+                        <div class="new-account standard-margin">
                             <section>
-                                <div style="margin-top: 20px;">
-                                    <span style="color: #0000008F;">By continuing, you agree to our <span class="clickable" (click)="openTermsOfService()">terms of service</span></span>
+                                <div style="margin-top: 20px;" class="create-account">
+                                    <span style="color: #0000008F;" class="clickable create-account-text">Create Account</span>
                                 </div>
-                                
-                                <div style="align-items: center;text-align: center;margin-top: 50px;">Privacy Policy</div>
+                                <div style="margin-top: 20px;" class="forgot-password">
+                                    <span style="color: #0000008F;" class="clickable forgot-password-text">Forgot Password</span>
+                                </div>
                             </section>
                         </div>
+                        
                         
                     </div>
                     

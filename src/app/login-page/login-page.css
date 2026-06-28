@@ -1,5 +1,5 @@
 .login-page-container{
-    border: 1px solid #808080;
+    
     border-radius: 10px;
 }
 
@@ -20,7 +20,7 @@
   
 }
 .login-email-div{
-    width: 97%;
+    width: 96%;
     border: 1px solid #dedede;
     display: flex;
     flex-direction: row;
@@ -31,7 +31,7 @@
     row-gap: 5px;
 }
 .email-input{
-    width: 85%;
+    width: 95%;
     border: none;
     font-size: medium;
     padding-top: 10px;
@@ -42,7 +42,7 @@ button{
     outline: none;
     background: none;
 }
-.continue{
+.signInButton{
     border-radius: 8px;
     width: 97%;
     text-align: center;
@@ -55,6 +55,7 @@ button{
     letter-spacing: -0.5px;
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 25px;
 }
 .standard-margin{
     margin-left: 5px;
@@ -93,5 +94,29 @@ button{
 .container{
     height:500px;
     overflow: scroll;
+}
+.login{
+    text-align: center;
+}
+.email-div{
+    font-size: 20px;
+}
+.login-password-div{
+    width: 96%;
+    border: 1px solid #dedede;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    margin-top: 20px;
+    row-gap: 5px;    
+}
+.create-account,.forgot-password{
+    text-align: center;
+}
+.create-account-text,.forgot-password-text{
+    color: black;
+    font-size: larger;
 }
 
