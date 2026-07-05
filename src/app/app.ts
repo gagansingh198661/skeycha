@@ -8,10 +8,11 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PrivacyPolicy } from './privacy-policy/privacy-policy';
 import { LoginPage } from './login-page/login-page';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,Menu,Catalog,Footer,PrivacyPolicy,LoginPage],
+  imports: [RouterOutlet,Header,Menu,Catalog,Footer,PrivacyPolicy,LoginPage,FormsModule, ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

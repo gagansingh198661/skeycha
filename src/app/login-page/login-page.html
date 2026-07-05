@@ -9,13 +9,14 @@
                         Login
                     </h1>
                 </div>
-                
                 <section>
+                    <form [formGroup]="profileForm" (ngSubmit)="login()">
+
                     <div class="standard-margin email-div">
                         <p>Email</p>
                     </div>
                     <div class="login-email-div" >
-                        <input class="email-input"/>
+                        <input class="email-input" formControlName="firstName"/>
                     </div>
 
 
@@ -23,9 +24,11 @@
                         <p>Password</p>
                     </div>
                     <div class="login-password-div" >
-                        <input class="email-input" type="password"/>
+                        <input class="email-input" type="password" formControlName="password"/>
                     </div>
-                    <div class="signInButton">Sign In</div>
+                    <button class="signInButton" type="submit">Sign In</button>
+                    </form>
+                
                     <div style="margin-top: 20px;margin-bottom: 20px;">
                         <div style="width: 100%;flex-direction: row;display: flex;">
                             <div style="width: 100%;padding-left: 5px;">
@@ -50,12 +53,9 @@
                                 </div>
                             </section>
                         </div>
-                        
-                        
-                    </div>
-                    
-                </section>
-                
+                      
+                    </div>                   
+                </section>               
             </div>
         </div>
     </div>
