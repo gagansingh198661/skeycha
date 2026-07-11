@@ -1,28 +1,30 @@
 .carousel-container {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   height: 100%;
-  scrollbar-width: none;
 }
 
 .carousel-track {
   display: flex;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
+  overflow-x: scroll;
+  cursor: grab; 
+scrollbar-width: none;
+}
+
+.carousel-track.active {
+  
+  cursor: grabbing; 
 }
 
 .carousel-item {
   flex: 0 0 100%;
-  scroll-snap-align: start;
   position: relative;
 }
 
 .carousel-item img {
   width: 100%;
   object-fit: cover;
-  height: 40vh;
+  height: 60vh;
   border-radius: 8px;
   display: block;
 }

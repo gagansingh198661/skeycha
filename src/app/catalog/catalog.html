@@ -5,6 +5,12 @@
         <mat-icon  class="sort-by-icon">arrow_drop_down</mat-icon>
     </div>
   </div>
+  <app-carousel
+    [isMobile]="true"
+    [images]="['/assets/carousel_item1.webp','/assets/carousel_item2.webp','/assets/carousel_item3.webp','/assets/carousel_item4.webp']"
+    topLeft="Sale!"
+    topRight="Limited Edition" [timerEnabled]="true">
+  </app-carousel>
   
 
     

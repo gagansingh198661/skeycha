@@ -4,9 +4,10 @@ import { Product } from '../dtos/product';
 import { ProductCard } from '../product-card/product-card';
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { Router } from '@angular/router';
+import { Carousel } from '../carousel/carousel';
 @Component({
   selector: 'app-catalog',
-  imports: [MatIconModule,ProductCard,CommonModule],
+  imports: [MatIconModule,ProductCard,CommonModule,Carousel],
   templateUrl: './catalog.html',
   styleUrls: ['./catalog.css'],
 })

@@ -15,31 +15,12 @@ export class LoginService {
   }
 
   loginUser(username?: string,password?:string){
-    console.log('Username password '+username+' '+password);
     const login = this.apiUrl+"/signIn";
-    let httpHeaders = new HttpHeaders();
-// WARNING: For POST requests, body is set to null by browsers.
-
-  // var xhr = new XMLHttpRequest();
-  // xhr.withCredentials = true;
-
-  // xhr.addEventListener("readystatechange", function() {
-  //   if(this.readyState === 4) {
-  //     console.log(this.responseText);
-  //   }
-  // });
-  // const credentials = btoa(`${username}:${password}`);
-
-  // xhr.open("POST", "http://localhost:8080/skeycha/signIn");
-  // xhr.setRequestHeader("accept", "*/*");
-  // xhr.setRequestHeader("Authorization", `Basic ${credentials}`);
-
-  // xhr.send();    
-
+    
     this.http.post(
-    'http://localhost:8080/skeycha/signIn',
-    {}, // body
-    {
+     'http://localhost:8080/skeycha/signIn',
+     {}, // body
+     {
       headers: new HttpHeaders({
         'accept': '*/*',
         'Authorization': `Basic ${btoa(username + ':' + password)}`
@@ -47,16 +28,19 @@ export class LoginService {
       withCredentials: true,
       responseType: 'text' as 'json',
       observe: 'response' 
-    }
-  ).subscribe({
+     }
+    ).subscribe({
     next: (response) => {
-      console.log('Body:', response.body);
+    console.log('Body:', response.body);
     console.log('Status:', response.status);
     console.log('Headers:', response.headers);
 
     // Example: get a specific header
     const authToken = response.headers.get('Authorization');
     console.log('Authorization header:', authToken);
+    this.http.get('http://localhost:8080/skeycha/example', { withCredentials: true }).subscribe({
+    });
+
     },
     error: (err) => {
       console.error('Error occurred:', err);
