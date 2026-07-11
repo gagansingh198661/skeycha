@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductCard {
   @Input() products : Product[] = [];
-  currentIndex: number = 0;
+  @Input() currentIndex: number = 0;
   selectedDotIndex: number | null = null;
   
 

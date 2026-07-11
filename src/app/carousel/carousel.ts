@@ -22,7 +22,7 @@ export class Carousel {
     }
   }
   startTimer() {
-      interval(3000).subscribe(() => {
+      interval(5000).subscribe(() => {
         this.currentIndex++;
         if (this.currentIndex >= this.images.length) {
           this.currentIndex = 0;
@@ -35,7 +35,6 @@ export class Carousel {
   changeImage(){
     const element=document.getElementsByClassName("carousel-track")[0] as HTMLElement;
     const carouselItem=document.getElementsByClassName("carousel-item")[0] as HTMLElement;
-    console.log("width "+carouselItem.offsetWidth);
     element.scrollTo(this.currentIndex*carouselItem.offsetWidth,0);
   }
 

@@ -1,30 +1,32 @@
 <div class="product">
-    <div class="product-image-container" >
-        <img [src]="getSelectedUrl()" alt="Product Image" class="product-image" />
-    </div>
-    <div class="add-to-cart-container">
-        <div class="add-to-cart-button" (click)="addToCart()"  aria-label="Add to Cart">
-            <span class="add-to-cart-text" style="color: beige;">Add to Cart</span>
+    <div class="product-container">
+        <div class="product-image-container" >
+            <img [src]="getSelectedUrl()" alt="Product Image" class="product-image" draggable="false"/>
         </div>
-    </div>
-    
-    <div class="product-name">
-        <span>Product Name</span>
-    </div>
-    <div class="prices">
-        <div class="product-price">
-            <span>₹ 570.00</span>
+        <div class="add-to-cart-container">
+            <div class="add-to-cart-button" (click)="addToCart()"  aria-label="Add to Cart">
+                <span class="add-to-cart-text" style="color: beige;">Add to Cart</span>
+            </div>
         </div>
-        <div class="previous-price">
-            <span>₹ 700.00</span>
+        
+        <div class="product-name">
+            <span>Product Name</span>
         </div>
-    </div>
-    
-    <div class="product-colors">
-        <div class="dot" [class.selected]="selectedDotIndex === 0" style="background-color: black;"(click)="selectDot(0)"></div>
-        <div class="dot" [class.selected]="selectedDotIndex === 1" style="background-color: cadetblue;" (click)="selectDot(1)"></div>
-        <div class="dot" [class.selected]="selectedDotIndex === 2"style="background-color: lightgray;" (click)="selectDot(2)"></div>
+        <div class="prices">
+            <div class="product-price">
+                <span>₹ 570.00</span>
+            </div>
+            <div class="previous-price">
+                <span>₹ 700.00</span>
+            </div>
+        </div>
+        
+        <div class="product-colors">
+            <div class="dot" [class.selected]="selectedDotIndex === 0" style="background-color: black;"(click)="selectDot(0)"></div>
+            <div class="dot" [class.selected]="selectedDotIndex === 1" style="background-color: cadetblue;" (click)="selectDot(1)"></div>
+            <div class="dot" [class.selected]="selectedDotIndex === 2"style="background-color: lightgray;" (click)="selectDot(2)"></div>
 
 
+        </div>
     </div>
 </div>

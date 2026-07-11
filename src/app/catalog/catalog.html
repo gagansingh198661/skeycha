@@ -16,15 +16,18 @@
     
 
 
-  <div class="catalog-products">
-    <app-product-card [products]="slides" (click)="openProduct()"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight";></app-product-card>
-    <app-product-card [products]="slides" (click)="openProduct()"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight";></app-product-card>
-    <app-product-card [products]="slides" (click)="openProduct()"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight";></app-product-card>
-    <app-product-card [products]="slides" (click)="openProduct()"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight";></app-product-card>
-    <app-product-card [products]="slides" (click)="openProduct()"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight";></app-product-card>
+  <div class="catalog-products" (mousedown)="onMouseDown($event)"
+   (mouseup)="onMouseUp($event)" 
+   (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave($event)">
+    <app-product-card class="product-card" [products]="slides" (click)="openProduct($event)"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="0"></app-product-card>
+    <app-product-card class="product-card" [products]="slides" (click)="openProduct($event)"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="1"></app-product-card>
+    <app-product-card class="product-card" [products]="slides" (click)="openProduct($event)"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="2"></app-product-card>
+    <app-product-card class="product-card" [products]="slides" (click)="openProduct($event)"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="3"></app-product-card>
+    <app-product-card class="product-card" [products]="slides" (click)="openProduct($event)"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="4"></app-product-card>
+    <app-product-card class="product-card" [products]="slides" (click)="openProduct($event)"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="5"></app-product-card>
+    <app-product-card class="product-card" [products]="slides" (click)="openProduct($event)"   [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="6"></app-product-card>
     
-    
-    <!-- more products -->
+  
   </div>
   <div class="catalog-pages">
     <div class="page-control" (click)="selectPreviousPage()">&lt;</div>

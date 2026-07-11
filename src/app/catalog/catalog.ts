@@ -13,15 +13,18 @@ import { Carousel } from '../carousel/carousel';
 })
 export class Catalog {
   slides : Product[] = [
-    { url: 'assets/cup1.jpg', title: 'Cup 1' },
-    { url: 'assets/cup2.jpg', title: 'Cup 2' },
-    { url: 'assets/cup3.jpg', title: 'Cup 3' },
-    { url: 'assets/cup4.jpg', title: 'Cup 4' },
-    { url: 'assets/cup5.jpg', title: 'Cup 5' },
+    { url: 'assets/product_1.png', title: 'Cup 1' },
+    { url: 'assets/product_2.png', title: 'Cup 2' },
+    { url: 'assets/product_3.png', title: 'Cup 3' },
+    { url: 'assets/product_4.png', title: 'Cup 4' },
+    { url: 'assets/product_5.png', title: 'Cup 5' },
+    { url: 'assets/product_6.png', title: 'Cup 5' },
+    { url: 'assets/product_7.png', title: 'Cup 5' },
+    { url: 'assets/product_8.png', title: 'Cup 5' },
   ];
 
-  cardHeight = '200px';
-  cardWidth = '200px';
+  cardHeight = '192.25px';
+  cardWidth = '192.25px';
 
   constructor(private router: Router) {}
 
@@ -54,7 +57,80 @@ export class Catalog {
     elements[this.selectedPage].classList.add("selected");
   }
 
-  openProduct() {
-    this.router.navigate(['/product']);  // always goes to same product page
+  openProduct(event: MouseEvent) {
+    if(!this.dragForClick){
+      this.router.navigate(['/product']);  // always goes to same product page
+    }else{
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      this.dragForClick=false;
+      return; 
+    }
+    
+  }
+
+  dragging = false;
+  dragForClick = false;
+  currentScroll: number = 0;
+  currentX: number = 0;
+  
+  onMouseDown(event: MouseEvent) {
+    const track = event.target as HTMLElement;
+    if(track.classList.contains('product-image')){
+      return;
+    }
+    track.classList.add('active');
+    this.currentX = event.screenX;
+    console.log("Mouse Down Current X", track);
+      this.dragging=true;
+      const element=document.getElementsByClassName("catalog-products")[0] as HTMLElement;
+      console.log("Mouse Down Current scroll", this.currentScroll);
+      if(this.currentScroll!==0){
+        element.scrollTo(this.currentScroll,0);
+      }
+    
+    
+    
+    
+  }
+
+  onMouseMove(event: MouseEvent) {
+    if (!this.dragging) return;
+    
+    const element=document.getElementsByClassName("catalog-products")[0] as HTMLElement;
+    let deltaX = this.currentX - event.screenX;
+    console.log("Element position"+element.scrollLeft);
+    console.log("Delta "+deltaX);
+    
+    element.scrollTo(element.scrollLeft+deltaX,0);
+    this.currentScroll=element.scrollLeft;
+    
+    
+    //this.currentScroll+=element.scrollLeft+deltaX;
+    this.currentX = event.screenX;
+  }
+
+  onMouseUp(event: MouseEvent) {
+    
+    
+    if(this.dragging){
+      const track = event.currentTarget as HTMLElement;
+      track.classList.remove('active');
+      this.dragging=false;
+      this.currentX =0;
+      //element.scrollTo(this.currentScroll,0);
+      console.log("Mouse up Current scroll", this.currentScroll);
+      const element=document.getElementsByClassName("catalog-products")[0] as HTMLElement;
+      console.log("Current Position"+element.scrollLeft);
+      event.stopImmediatePropagation();
+    }
+  }
+
+  onMouseLeave(event: MouseEvent) {
+    if(this.dragging){
+      const element=document.getElementsByClassName("catalog-products")[0] as HTMLElement;
+      element.classList.remove('active');
+      this.dragging=false;
+    }
   }
 }
