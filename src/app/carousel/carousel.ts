@@ -22,15 +22,20 @@ export class Carousel {
     }
   }
   startTimer() {
-      interval(5000).subscribe(() => {
-        this.currentIndex++;
-        if (this.currentIndex >= this.images.length) {
-          this.currentIndex = 0;
-        }
-        this.changeImage();
-        
-    });
-  }
+  const advance = () => {
+    this.currentIndex++;
+    if (this.currentIndex >= this.images.length) {
+      this.currentIndex = 0;
+    }
+    this.changeImage();
+
+    // schedule the next run
+    setTimeout(advance, 5000);
+  };
+
+  // kick off the first run
+  setTimeout(advance, 5000);
+}
 
   changeImage(){
     const element=document.getElementsByClassName("carousel-track")[0] as HTMLElement;

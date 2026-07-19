@@ -57,17 +57,7 @@ export class Catalog {
     elements[this.selectedPage].classList.add("selected");
   }
 
-  openProduct(event: MouseEvent) {
-    if(!this.dragForClick){
-      this.router.navigate(['/product']);  // always goes to same product page
-    }else{
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      this.dragForClick=false;
-      return; 
-    }
-    
-  }
+  
 
   dragging = false;
   dragForClick = false;

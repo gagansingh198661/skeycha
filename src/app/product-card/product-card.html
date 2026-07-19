@@ -1,7 +1,7 @@
 <div class="product">
     <div class="product-container">
         <div class="product-image-container" >
-            <img [src]="getSelectedUrl()" alt="Product Image" class="product-image" draggable="false"/>
+            <img [src]="getSelectedUrl()" (click)="openProduct($event)" alt="Product Image" class="product-image" draggable="false"/>
         </div>
         <div class="add-to-cart-container">
             <div class="add-to-cart-button" (click)="addToCart()"  aria-label="Add to Cart">
