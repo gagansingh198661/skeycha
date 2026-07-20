@@ -1,0 +1,52 @@
+.admin-container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr ;
+    grid-template-areas: 
+    "sidebar main";
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+main{
+    grid-area: main;
+}
+aside{
+    top:0;
+    grid-area: sidebar;
+    background-color: aliceblue;
+    position: sticky;
+    align-self: start;
+}
+.input_container {
+  border: 1px solid #e5e5e5;
+  width: fit-content;
+}
+
+
+input[type=file]{
+    display: block;
+    color: #000;
+}
+
+.removeImage{
+    background-image: url("/assets/cross-button.jpg");
+    width:  20px;
+    height: 20px;
+    border: none;
+}
+
+.files-list{
+    list-style: none;
+}
+ul#files-list.files-list{
+ margin-left: -30px;
+}
+
+.file-selected{
+    display: block;
+}
+
+
+

@@ -1,0 +1,33 @@
+<div class="admin-container">
+    <aside>
+        Sidebar
+    </aside>
+    <main>
+        <div>
+            <form>
+                <div class="input_container" id="input_container">
+                    <h3 >Upload A minimum of 3 Product Images</h3>
+                    <ul class="files-list" id="files-list">
+                        <li id="list_item_1">
+                            <div style="display: flex;">
+                                <input type="file" id="fileUpload_1" (change)="onFileChange($event)">
+                                <img class="remove-button" id="cross_button_1"
+                                class="removeImage" src="assets/cross-button.jpg" alt="Remove Image"
+                                (click)="removeFile($event)">
+                            </div>
+                        </li>    
+                    </ul>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </form>
+            <button class="upload-button" (click)="addFn()">Add another Image</button>
+
+        </div>
+    </main>
+</div>
+

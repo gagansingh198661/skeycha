@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { Menu } from './menu/menu';
 import { Catalog } from './catalog/catalog';
@@ -17,13 +17,21 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+
+  showAdmin: boolean = true;
+
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, router:Router) {
     iconRegistry.addSvgIcon(
       'instagram',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/instagram.svg')
     );
+    router.events.forEach((event) => {
+    if(event instanceof NavigationStart) {
+        this.showAdmin = event.url !== "/admin";
+    }
+  });
   }
-  protected readonly title = signal('sonam');
+  protected readonly title = signal('skeycha');
 
   
 }

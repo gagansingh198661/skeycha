@@ -4,7 +4,7 @@ import { TermsOfService } from '../terms-of-service/terms-of-service';
 import { NgIf } from '@angular/common';
 import { Menu } from '../menu/menu';
 import { ModalService } from '../modal-service';
-import { LoginService } from '../services/login-service';
+import { LoginService } from '../services/login/login-service';
 import {FormControl, FormGroup, NgForm, ReactiveFormsModule} from '@angular/forms';
 
 @Component({

@@ -1,7 +1,12 @@
-<app-header></app-header>
-<app-menu></app-menu>
+<div class="header">
+    <app-header></app-header>
+    <app-menu></app-menu>
+</div>
 <!-- <app-productpage></app-productpage>replace with catalog for home page default -->
-<router-outlet></router-outlet>
+<div class="main-content">
+    <router-outlet></router-outlet>
+</div>
+
  <!-- USe the above code when you want to display the routed components -->
 <app-login-page></app-login-page>
 <app-footer></app-footer>

@@ -1,0 +1,12 @@
+.header{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+}
+.main-content{
+    position: relative;
+    top: 126px;
+}
