@@ -20,7 +20,7 @@ export class AdminService {
       'Content-Type': 'application/json'
     });
     const url = this.apiUrl+"products/add";
-
+    console.log("adding product");
     return this.http.post(url, product);
 
   }

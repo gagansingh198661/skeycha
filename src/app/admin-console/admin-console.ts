@@ -11,20 +11,22 @@ import { ProductInfoDto } from '../dtos/productInfoDto';
 })
 export class AdminConsole {
 
-  prodIdList = signal<string[]>([]);
+  prodIdList = signal<string[]>(['']);
   productId = signal<string>('');
   productNameSignal = signal<string>('');
-
-    constructor(private adminService:AdminService){
+  productDescriptionSignal = signal<string>('');
+  productPriceSignal = signal<string>('');
+  constructor(private adminService:AdminService){
+    this.prodIdList.set(['']); 
     this.adminService.fetchProducts().subscribe({
       next: (data) => {
         const prodDtoList = data as ProductInfoDto[];
         const ids = prodDtoList.map(
           prodDto => `${prodDto.productId} : ${prodDto.name}`
         );
-        this.prodIdList.set(ids); 
         
-        
+        this.prodIdList.update(list => [...list, ...ids]);
+
       },
       error: (err) => {
         // Triggers if the request fails
@@ -136,11 +138,11 @@ export class AdminConsole {
     if(prodPrice.length===0&&this.isNumeric(prodPrice)){
       return;
     }
-    //product.price = prodPrice;
+    product.price = prodPrice;
     if(category===""){
       return;
     }
-    //product.category = category;
+    product.category = category;
     const  imageList = [];
     for(let i=1;i<=6;i++){
       const image_url_button = document.getElementById("image_url_"+i) as HTMLInputElement
@@ -151,7 +153,10 @@ export class AdminConsole {
     product.imageList = imageList;
     this.adminService.addProduct(product).subscribe({
       next: (res) => {
-        
+        const prodDto = res as ProductInfoDto;
+        const prodId = prodDto.productId +" : " + prodDto.name
+        this.prodIdList.update(list => [...list, prodId]);
+    
         console.log('Response:', res);
       },
       error: (err) => console.error('Error:', err)
@@ -172,12 +177,22 @@ export class AdminConsole {
         this.adminService.fetchProduct(params[0].trim()).subscribe(data=>{
           console.log(data);
           this.productId.set(data.productId);
-          this.productNameSignal.set(data.name)
+          this.productNameSignal.set(data.name);
+          this.productDescriptionSignal.set(data.description);
+          this.productPriceSignal.set(data.price);
         });
       }
+    }else{
+      this.clearForm();
     }
-    console.log(selectedElement.value);
+    
   }
 
+  clearForm(){
+    this.productId.set('');
+    this.productNameSignal.set('');
+    this.productDescriptionSignal.set('');
+    this.productPriceSignal.set('');
 
+  }
 }

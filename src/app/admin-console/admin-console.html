@@ -15,9 +15,9 @@
                         <label>Product Name : </label>
                         <input type ="text" id="product_name" size="40px" [value]="productNameSignal()">
                         <label>Product Description : </label>
-                        <textArea id="product_description"></textArea>
+                        <textArea id="product_description" [value]="productDescriptionSignal()"></textArea>
                         <label>Product Price : </label>
-                        <input type ="text" id="product_price">
+                        <input type ="text" id="product_price" [value]="productPriceSignal()">
                         
                         <label>Product Category : </label>
                         <select id="product_category">
