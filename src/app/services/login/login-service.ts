@@ -25,22 +25,21 @@ export class LoginService {
         'accept': '*/*',
         'Authorization': `Basic ${btoa(username + ':' + password)}`
       }),
-      withCredentials: true,
       responseType: 'text' as 'json',
       observe: 'response' 
      }
     ).subscribe({
     next: (response) => {
-    console.log('Body:', response.body);
-    console.log('Status:', response.status);
-    console.log('Headers:', response.headers);
+      console.log('Body:', response.body);
+      console.log('Status:', response.status);
+      console.log('Headers:', response.headers);
 
-    // Example: get a specific header
-    const authToken = response.headers.get('Authorization');
-    console.log('Authorization header:', authToken);
-    this.http.get('http://localhost:8080/skeycha/example', { withCredentials: true }).subscribe({
-    });
-
+      // Example: get a specific header
+      const authToken = response.headers.get('Authorization');
+      console.log('Authorization header:', authToken);
+      this.http.get('http://localhost:8080/skeycha/example',{ 
+        withCredentials: true 
+      }).subscribe({});
     },
     error: (err) => {
       console.error('Error occurred:', err);

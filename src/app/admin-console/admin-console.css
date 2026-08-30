@@ -1,33 +1,47 @@
+.input_container_2{
+    margin-left: 50%;
+}
+
 .admin-container{
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 1fr ;
-    grid-template-areas: 
-    "sidebar main";
+    min-height: fit-content;
+    display: flex;
+    
     padding-left: 5px;
     padding-right: 5px;
+    background-color: #e5e5e5;
 }
 
 main{
-    grid-area: main;
+    display: flex;
+    flex-direction: row;
 }
-aside{
-    top:0;
-    grid-area: sidebar;
-    background-color: aliceblue;
-    position: sticky;
-    align-self: start;
+
+.productsList{
+    width: 300px;
 }
+
+
+
+
 .input_container {
-  border: 1px solid #e5e5e5;
+  border: 1px solid black;
   width: fit-content;
+  height: max-content;
+  margin-bottom: 10px;
 }
 
 
 input[type=file]{
     display: block;
     color: #000;
+}
+
+input{
+    margin-top: 5px;
+}
+
+select{
+    margin-top: 5px;
 }
 
 .removeImage{
@@ -56,6 +70,45 @@ ul#files-list.files-list{
 label{
     margin-top: 20px;
 }
+
+@media screen and (max-width: 546px) {
+  #sidebar{
+
+        background: aliceblue;
+        position: fixed;
+        align-self: start;
+        width:300px;
+        transition: 300ms ease-in-out;
+        overflow: hidden;
+        left: -200px;
+        top: 50px;
+        z-index: 1000;
+    }
+
+
+    #sidebar.close{
+        left:0px;
+    }
+
+    main{
+        margin-left: 15%;
+        margin-right: 5%;
+        min-width:70%;  
+        
+    }
+
+    .admin-container{
+        min-height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: 1px solid black;
+    }
+
+}
+
+
 
 
 

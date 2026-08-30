@@ -1,27 +1,46 @@
 <div class="admin-container">
-    <aside>
+    <!-- <aside id="sidebar" (click)="toggleSideBar($event)">
         Sidebar
-    </aside>
+    </aside> -->
     <main>
         <div>
-            <form>
+            <form >
                 <div class="input_container" id="input_container">
                     <div class="text_controls_container">
+                        <label>Add/Update Product</label>
+
+                        <label>Product Id : </label>
+                        <input type ="text" [value]="productId()" id="product_id" size="40px" disabled>
+                        
+                        <label>Product Name : </label>
+                        <input type ="text" id="product_name" size="40px" [value]="productNameSignal()">
                         <label>Product Description : </label>
-                        <input type ="text" id="product_description">
+                        <textArea id="product_description"></textArea>
                         <label>Product Price : </label>
                         <input type ="text" id="product_price">
+                        
                         <label>Product Category : </label>
                         <select id="product_category">
-                            <option >    </option>
+                            <option value="">    </option>
                             <option value="Earring">Earrings</option>
                             <option value="Necklace">Necklace</option>
                             <option value="Ring">Rings</option>
                             <option value="Bag">Bags</option>
                         </select>
+                        <label>Product Image : </label>
+                        <input type ="text" id="image_url_1">
+                        <input type ="text" id="image_url_2">
+                        <input type ="text" id="image_url_3">
+                        <input type ="text" id="image_url_4">
+                        <input type ="text" id="image_url_5">
+                        <input type ="text" id="image_url_6">
+                        <div style="display: flex;flex-direction: column;">
+                        <!-- <button type="button" class="upload-button" (click)="addFn()">Add another Image</button> -->
+                            <button type="button" style="margin-top: 20px;" (click)="validateAndsubmitRequest()">Add Product</button>
+                        </div>    
                     </div>
                     
-                    <h3 >Upload A minimum of 3 Product Images</h3>
+                    <!-- <h3 >Upload A minimum of 3 Product Images</h3>
                     <ul class="files-list" id="files-list">
                         <li id="list_item_1">
                             <div style="display: flex;">
@@ -30,18 +49,31 @@
                                 class="removeImage" src="assets/cross-button.jpg" alt="Remove Image"
                                 (click)="removeFile($event)">
                             </div>
-                        </li>    
-                    </ul>
+                        </li> 
                     
-                    
-                    
-                    
-                    
+                    </ul>   -->
                     
                 </div>
             </form>
-            <button class="upload-button" (click)="addFn()">Add another Image</button>
+            
+            
+        </div>
 
+        <div>
+            <div class="input_container_2">
+                <div class="text_controls_container">
+                    
+                    <select class="productsList" name="productsList" size="10" (change)="updateForm($event)">
+                    @for (productId of prodIdList(); track $index) {
+                        <option [value]="productId">{{ productId }}</option>
+                    }
+                    </select>
+                </div>    
+            </div>
+                    
+                    
+                    
+                
         </div>
     </main>
 </div>
