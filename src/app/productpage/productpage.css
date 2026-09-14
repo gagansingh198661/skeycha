@@ -276,23 +276,7 @@
     display: none;
   }
 
-  .add-to-cart-button{
-    padding: 10.4px 28px;
-    border: 1px solid rgb(48 122 7);
-    background: none;
-    background-color: rgb(48 122 7);
-    color: white;
-    letter-spacing: 0.1em;
-  }
-  .buy-now-button{
-    padding: 10.4px 28px;
-    border: none;
-    background: none;
-    border: 1px solid rgb(28 28 28);
-    background-color: rgb(28 28 28);
-    color: rgb(255 255 255);
-    
-  }
+  
 }
 
 .desktop-only {
@@ -306,7 +290,6 @@
 .product-image-array{
   display: flex;
   flex-direction: column;
-  
   
 }
 
