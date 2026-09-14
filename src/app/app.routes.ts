@@ -8,7 +8,7 @@ import { LoginPage } from './login-page/login-page';
 import { AdminConsole } from './admin-console/admin-console';
 export const routes: Routes = [
   { path: '', component: Catalog },          // default route
-  { path: 'product', component: Productpage }, // product detail route
+  { path: 'product/:id', component: Productpage }, // product detail route
   { path: 'checkout', component: CheckoutPage }, // checkout route
   { path: 'refunds', component: Refunds }, // refunds route
   { path: 'aboutus',component:AboutUs},

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ProductCard {
   @Input() products : Product[] = [];
   @Input() currentIndex: number = 0;
+  @Input() productId: number = 0;
   selectedDotIndex: number | null = null;
 
   constructor(private router: Router) {}
@@ -33,7 +34,7 @@ export class ProductCard {
 
   openProduct(event: MouseEvent) {
    // if(!this.dragForClick){
-      this.router.navigate(['/product']);  // always goes to same product page
+      this.router.navigate(['/product',this.productId]);  // always goes to same product page
     // }else{
     //   event.preventDefault();
     //   event.stopImmediatePropagation();
