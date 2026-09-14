@@ -84,3 +84,23 @@
   
   margin-top: 20px;
 }
+.catalog{
+  margin-bottom: 110px;
+}
+
+.custom-btn {
+  background-color: #5d635d;   /* green background */
+  color: white;                /* white text */
+  padding: 12px 24px;          /* spacing */
+  border: 1px solid #5C5C5C;                /* remove default border */
+  font-size: 14px;
+  cursor: pointer;             /* pointer on hover */
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: white;
+  color:#5C5C5C   /* darker green on hover */
+        /* add border on hover */
+}
+

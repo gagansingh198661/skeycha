@@ -20,7 +20,7 @@
                         <input type ="text" id="product_price" [value]="productPriceSignal()">
                         
                         <label>Product Category : </label>
-                        <select id="product_category">
+                        <select id="product_category" [(ngModel)]="selectedCategory" [ngModelOptions]="{standalone: true}">
                             <option value="">    </option>
                             <option value="Earring">Earrings</option>
                             <option value="Necklace">Necklace</option>
@@ -28,12 +28,13 @@
                             <option value="Bag">Bags</option>
                         </select>
                         <label>Product Image : </label>
-                        <input type ="text" id="image_url_1">
-                        <input type ="text" id="image_url_2">
-                        <input type ="text" id="image_url_3">
-                        <input type ="text" id="image_url_4">
-                        <input type ="text" id="image_url_5">
-                        <input type ="text" id="image_url_6">
+                        
+                            <input type ="text" id="image_url_1" >
+                            <input type ="text" id="image_url_2" >
+                            <input type ="text" id="image_url_3" >
+                            <input type ="text" id="image_url_4" >
+                            <input type ="text" id="image_url_5" >
+                            <input type ="text" id="image_url_6" >
                         <div style="display: flex;flex-direction: column;">
                         <!-- <button type="button" class="upload-button" (click)="addFn()">Add another Image</button> -->
                             <button type="button" style="margin-top: 20px;" (click)="validateAndsubmitRequest()">Add Product</button>

@@ -2,10 +2,10 @@ import { Component, signal } from '@angular/core';
 import { ProductDto } from '../request/productDto';
 import { AdminService } from '../services/admin-service/admin-service';
 import { ProductInfoDto } from '../dtos/productInfoDto';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-admin-console',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './admin-console.html',
   styleUrl: './admin-console.css',
 })
@@ -16,6 +16,8 @@ export class AdminConsole {
   productNameSignal = signal<string>('');
   productDescriptionSignal = signal<string>('');
   productPriceSignal = signal<string>('');
+  selectedCategory: string = ''; // bound to <select>
+  imageList : string[] = []; // bound to <input type="text">
   constructor(private adminService:AdminService){
     this.prodIdList.set(['']); 
     this.adminService.fetchProducts().subscribe({
@@ -34,7 +36,6 @@ export class AdminConsole {
       },
       complete: () => {
         // Triggers once the data stream terminates entirely
-        console.log('Stream finished.'); 
       }
     });
     
@@ -180,6 +181,14 @@ export class AdminConsole {
           this.productNameSignal.set(data.name);
           this.productDescriptionSignal.set(data.description);
           this.productPriceSignal.set(data.price);
+          this.selectedCategory = data.category;
+          data.imageList.forEach((imageDto: { imageUrl: string; image_id: any; },index: number)=>{
+            const image_url_button = document.getElementById("image_url_"+(index+1)) as HTMLInputElement
+            image_url_button.value = imageDto.imageUrl;
+            this.imageList.push(imageDto.image_id);
+          })
+          
+          
         });
       }
     }else{

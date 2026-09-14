@@ -29,6 +29,11 @@
     <app-product-card class="product-card" [products]="slides"  [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="5"></app-product-card>
     <app-product-card class="product-card" [products]="slides" [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="6"></app-product-card>
   </div>
+  <div style="margin-top: 35px;margin-bottom: 20px;">
+    <div style="text-align: center;">
+      <button class="custom-btn">VIEW ALL</button>
+    </div>
+  </div>
 
 <div class="catalog-title-container">
     <div class="catalog-title">
@@ -45,6 +50,11 @@
     <app-product-card class="product-card" [products]="slides"    [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="4"></app-product-card>
     <app-product-card class="product-card" [products]="slides"  [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="5"></app-product-card>
     <app-product-card class="product-card" [products]="slides" [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="6"></app-product-card>
+  </div>
+  <div style="margin-top: 35px;margin-bottom: 20px;">
+    <div style="text-align: center;">
+      <button class="custom-btn">VIEW ALL</button>
+    </div>
   </div>
 
   <div class="catalog-title-container">
@@ -63,6 +73,11 @@
     <app-product-card class="product-card" [products]="slides" [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="5"></app-product-card>
     <app-product-card class="product-card" [products]="slides" [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="6"></app-product-card>
   </div>
+  <div style="margin-top: 35px;margin-bottom: 20px;">
+    <div style="text-align: center;">
+      <button class="custom-btn">VIEW ALL</button>
+    </div>
+  </div>
 
   <div class="catalog-title-container">
     <div class="catalog-title">
@@ -80,18 +95,13 @@
     <app-product-card class="product-card" [products]="slides" [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="5"></app-product-card>
     <app-product-card class="product-card" [products]="slides" [style.--customWidth]="cardWidth"; [style.--customHeight]="cardHeight"; [currentIndex]="6"></app-product-card>
   </div>
-
-
-  <div class="catalog-pages">
-    <div class="page-control" (click)="selectPreviousPage()">&lt;</div>
-    @for (page of numberOfPages; track page) {
-      <div class="page-number"
-          (click)="selectPage(page)"
-          [class.selected]="page === selectedPage">
-        {{ page + 1 }}
-      </div>
-  }
-    <div class="page-control" (click)="selectNextPage()">&gt;</div>
-
+  <div style="margin-top: 35px;margin-bottom: 20px;">
+    <div style="text-align: center;">
+      <button class="custom-btn">VIEW ALL</button>
+    </div>
   </div>
+
+  <div style=" display:block;padding-bottom: 1px;">
+  </div>
+  
 </div>
