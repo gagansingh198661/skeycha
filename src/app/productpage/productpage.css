@@ -3,7 +3,7 @@
   font-family: poppins, sans-serif; 
   color: #5C5C5CA6;
   font-weight: 600;
-  border:1px solid #5C5C5C;
+  
 }
 .product-name {
   font-size: 18px;
@@ -274,9 +274,7 @@
   }
   .mobile-only {
     display: none;
-  }
-
-  
+  } 
 }
 
 .desktop-only {
@@ -290,7 +288,6 @@
 .product-image-array{
   display: flex;
   flex-direction: column;
-  
 }
 
 .thumbnailWrapper{

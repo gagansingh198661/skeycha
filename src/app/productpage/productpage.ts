@@ -53,16 +53,22 @@ export class Productpage {
   productImages: imageDto[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,private adminService: AdminService,
-            private sanitizer: DomSanitizer) {
-      this.activatedRoute.params.subscribe(params => {
-      this.productId = params['id']; // 123
-    });
-    // fetchProduct expects a string id, ensure we pass a string
-    adminService.fetchProduct(this.productId.toString()).subscribe({
+              private router: Router,private adminService: AdminService) {
+      
+    this.activatedRoute.params.subscribe(params => {
+        this.productId = params['id']; // 123
+        console.log('Product ID from route:', this.productId);
+      });
+    
+    // Fetch product data based on productId
+    this.adminService.fetchProduct(this.productId.toString()).subscribe({
       next: (data) => {
         console.log('Product data fetched:', data.imageList);
-        this.productImages = data.imageList; // Assuming the API returns an array of image URLs in the 'images' property
+        this.productImages = data.imageList; 
+        this.productImages=data.imageList.map((image: imageDto, index: number) => {
+          return { imageId: image.imageId, imageUrl: this.safeUrl(image.imageUrl) };
+        });
+        // Assuming the API returns an array of image URLs in the 'images' property
         // Handle the fetched product data here
       },
       error: (error) => {
@@ -70,6 +76,11 @@ export class Productpage {
         // Handle the error here
       }
     });
+    
+  }
+
+  ngonInit() {
+    
   }
 
    toggleCart(event:Event): void {
@@ -113,5 +124,6 @@ export class Productpage {
 
   setImageIndex(index: number): void {
     this.selectedImageIndex = index;
+
   }
 }

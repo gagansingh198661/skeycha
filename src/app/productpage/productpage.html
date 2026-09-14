@@ -2,10 +2,10 @@
   <div class="desktop-only">
     <div class="inner-container">
       <div class="product-image-array">
-          @for(imageDto of productImages; track $index){
+          @for(imageDto of productImages ; track $index){
             <div class="thumbnailWrapper" 
             [class.active]="$index === selectedImageIndex">
-              <img [src]="safeUrl(imageDto.imageUrl)" [class.active]="$index === selectedImageIndex"
+              <img *ngIf="imageDto?.imageUrl" [src]="(imageDto.imageUrl)" [class.active]="$index === selectedImageIndex"
               alt="Product Image" class="thumbNailImage"
               style="width: 75px; height: 75px; cursor: pointer;" 
                 (click)="setImageIndex($index)">
@@ -14,8 +14,7 @@
           }   
       </div>
       <div class="product-image">
-        <img [src]="safeUrl(productImages[selectedImageIndex].imageUrl)" alt="Product Image" style="width: 569px; height: 569px;">
-
+        <img *ngIf="productImages[selectedImageIndex]?.imageUrl" [src]="(productImages[selectedImageIndex].imageUrl)" alt="Product Image" style="width: 569px; height: 569px;">
       </div>
       <div class="product-description" >
         <div class="product-details">
