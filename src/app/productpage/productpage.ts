@@ -11,6 +11,7 @@ import { CartItem } from '../cart/cart-item/cart-item';
 import { AdminService } from '../services/admin-service/admin-service';
 import { imageDto } from '../dtos/imageDto';
 import { DomSanitizer } from '@angular/platform-browser';
+import { map, Observable } from 'rxjs';
 @Component({
   selector: 'app-productpage',
   imports: [Carousel, MatExpansionModule,ProductCard,
@@ -25,7 +26,6 @@ export class Productpage {
   cardWidth = '200px';
   activeIndex = 0;
   productId : number= 0;
-  imageUrl = 'https://imagetourl.cloud/qxilpowh.png';
   selectedImageIndex: number = 0;
   contents : GuaranteeDto[] = [
     { guaranteeTitle: 'Secure Payment', guaranteeDescription: 'Your Payment Information is processed Securely', guaranteeIcon: 'fa-solid fa-shield-halved'},
@@ -50,7 +50,14 @@ export class Productpage {
     this.colorSelected = option;
   }
 
-  productImages: imageDto[] = [];
+  productImages!: Observable<imageDto[]>;
+
+  productDto :{name: string, description: string, price: string, category: string} = {
+    name: '',
+    description: '',
+    price: '',
+    category: ''
+  };
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,private adminService: AdminService) {
@@ -59,27 +66,29 @@ export class Productpage {
         this.productId = params['id']; // 123
         console.log('Product ID from route:', this.productId);
       });
-    
-    // Fetch product data based on productId
-    this.adminService.fetchProduct(this.productId.toString()).subscribe({
-      next: (data) => {
-        console.log('Product data fetched:', data.imageList);
-        this.productImages = data.imageList; 
-        this.productImages=data.imageList.map((image: imageDto, index: number) => {
-          return { imageId: image.imageId, imageUrl: this.safeUrl(image.imageUrl) };
-        });
-        // Assuming the API returns an array of image URLs in the 'images' property
-        // Handle the fetched product data here
-      },
-      error: (error) => {
-        console.error('Error fetching product data:', error);
-        // Handle the error here
-      }
+    let temporaryDataHolder = this.adminService.fetchProduct(this.productId.toString());
+    this.productImages = temporaryDataHolder.pipe(
+      map(data => data.imageList.map((image: imageDto) => ({
+        imageId: image.imageId,
+        imageUrl: this.safeUrl(image.imageUrl)
+        })
+      ))
+    );
+
+    temporaryDataHolder.subscribe(data => {
+      console.log('Fetched product data:', data);
+      this.productDto.name = data.name;
+      this.productDto.description = data.description;
+      this.productDto.price = data.price;
+      this.productDto.category = data.category;
     });
+
     
+
   }
 
-  ngonInit() {
+  ngOnInit() {
+    console.log(' on init:');
     
   }
 
